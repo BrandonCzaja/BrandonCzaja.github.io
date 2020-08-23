@@ -1,0 +1,71 @@
+
+body {
+    background-color: indianred;
+}
+
+
+.container {
+
+    background-color: #f2cd99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/*Carousel*/
+.carousel-container {
+    background-color: yellow;
+    width: 40%;
+    display: flex;
+    justify-content: space-around;
+}
+
+/*Image Container*/
+.carousel-images {
+    background-color: lightblue;
+    position: relative;
+    width: 75%;
+    padding: 10px;
+    border-radius: 10px;
+    box-sizing: border-box;
+    box-shadow: 3px 3px darkgray;
+} 
+
+
+/*Set Image*/
+.carousel-images img {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    display: none;
+}
+
+
+
+.carousel-images img:first-of-type {
+    display: block;
+}
+
+
+
+.carousel-button{
+    margin-top: 12%;
+    position: relative;
+    align-self: center;
+    background: lightblue;
+    color: #888;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 1px 1px darkgrey;
+  }
+
+/*Make sure to change these colors*/
+.carousel-button:hover {
+    cursor: pointer;
+    background: darkblue;
+    box-shadow: 1px 1px #f2cd99;
+    color: white;
+}
