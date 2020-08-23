@@ -15,8 +15,6 @@
 
 */
 
-
-
 // $("form").on('submit', (event) => {
 //     event.preventDefault();
 //     const search = $('input').val();
@@ -36,8 +34,41 @@
 
 
 
+//////////////////////////////API/////////////////////////////////////
+
+$('form').on('submit' , (event) => {
+    event.preventDefault();
+
+    const card = $('input').val();
+
+//This url gets all cards up to 100, but does not get the specific card i am asking for. The input is not triggering
+$.ajax({
+    url:`https://api.magicthegathering.io/v1/cards?name=${card}`,
+}).then(
+    (data) => {
+        console.log(data);
+        $('#name').html(data.cards[0].name);
+        $('#mana').html(data.cards[0].manaCost);
+        $('#type').html(data.cards[0].type);
+        $('#card-text').html(data.cards[0].text);
+        $('#card-image').html(`<img src = "${data.cards[0].imageUrl}" width = '10%'>`)
+    }
+)
 
 
+})
+
+//Card Image
+//imageUrl: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=130483&type=card"
+
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////
+
+////////////////////////////Carousel//////////////////////////////////
 let currentImageIndex = 0;
 let highestIndex = $('.carousel-images').children().length-1
 
@@ -68,3 +99,5 @@ $('.previous').on('click' , () => {
 })
 
 console.log(highestIndex)
+
+//////////////////////////////////////////////////////////////////////
