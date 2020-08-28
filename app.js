@@ -1,28 +1,5 @@
-/*
-THINGS I NEED TO FIX
-    -NOT REAL CARD OR TYPO?
-    -NEED MISSING SET SYMBOLS
-    -FIX SET SYMBOL PLACEMENT AND SIZES
-    -FIX WINDOW BACKGROUND FOR DIFFERENT SCREEN SIZES
-        -USE TABLET/PHONE BUTTON IN INSPECT
-
-    
-
-
-    STRETCH:
-        -ON CLICK #BOTTOM TOP BORDER 5PX SOLID BLACK
-*/
-
-
-
-
-
-
-
-
-
 //////////////////INDIVIDUAL CARDS//////////////////////////////////
-
+//GOOD NEWS: RECEIVED A 503 ERROR: THEY ARE TEMPORARILY OFFLINE FOR MAINTENANCE 
 $('form').on('submit' , (event) => {
     event.preventDefault();
 
@@ -64,97 +41,188 @@ $('form').on('submit' , (event) => {
 
 
 
-//////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////
 
 ///////////////////////    Carousel    //////////////////////////////////
-let currentImageIndex = 0;
-let highestIndex = $('.carousel-images').children().length-1
+/*
+        -POTENTIAL NEW API. SAME AS THE CARD SEARCH API BUT FOR SETS NOT CARDS
+        https://api.magicthegathering.io/v1/sets?SETNAME= THEN HOWEVER I CALL IT
 
-//Next Button
-$('.next').on('click' , () => {
-    console.log('next was clicked');
-    $('.carousel-images').children().eq(currentImageIndex).css('display' , 'none');
+        -I WONDER IF I CAN CHANGE THE CAROUSEL TO BE ALL IMAGE VARIATIONS OF THE CARD.
 
-    if(currentImageIndex < highestIndex) {
-        currentImageIndex++;
-    } else {
-        currentImageIndex = 0;
-    }
+        $.ajax({
+            url: 'https://api.magicthegathering.io/v1/sets?'
+        }).then(
+            (data) => {
+                console.log(data);
+                let highestIndex = data.length-1;
+                let currentImageIndex = 0;
 
-    $('.carousel-images').children().eq(currentImageIndex).css('display' , 'block');
-})
+                for(let i = 0; i < highestIndex; i++) {
+                    $('<img class = SetSymbols>').attr({src: data[i].})
+                }
+            }
+        )
 
-//Previous Buttons
-$('.previous').on('click' , () => {
-    $('.carousel-images').children().eq(currentImageIndex).css('display', 'none');
 
-    if(currentImageIndex > 0) {
-        currentImageIndex--;
-    } else {
-        currentImageIndex = highestIndex;
-    }
+*/
+////////////////////////////////////////////////////////////////////
 
-    $('.carousel-images').children().eq(currentImageIndex).css('display', 'block');
-})
 
-console.log(highestIndex)
+//SET ICONS
+//   $.ajax({
+//     //URL FOR SET NAMES AND ICONS
+//     url: `https://api.scryfall.com/sets` 
+//   }).then(
+//       (data) =>{
+//         //   console.log(data)
+//           let highestIndex = data.data.length-2;
+//           let currentImageIndex = 0;
+
+//           for(let i = 0; i < highestIndex; i++){
+//               $('<img class = SetSymbols>').attr({src: data.data[i].icon_svg_uri , id: `${i}`}).appendTo($('.carousel-images'));
+//           }          
+          
+//           //Next Button
+//           $('.next').on('click' , () => {
+//               console.log('next was clicked');
+//               $('.carousel-images').children().eq(currentImageIndex).css('display' , 'none');
+          
+//               if(currentImageIndex < highestIndex) {
+//                   currentImageIndex++;
+//               } else {
+//                   currentImageIndex = 0;
+//               }
+          
+//               $('.carousel-images').children().eq(currentImageIndex).css('display' , 'block');
+//           })
+          
+//           //Previous Buttons
+//           $('.previous').on('click' , () => {
+//               $('.carousel-images').children().eq(currentImageIndex).css('display', 'none');
+          
+//               if(currentImageIndex > 0) {
+//                   currentImageIndex--;
+//               } else {
+//                   currentImageIndex = highestIndex;
+//               }
+          
+//               $('.carousel-images').children().eq(currentImageIndex).css('display', 'block');
+//           })
+
+          
+
+//       }
+//   )
+
+
+
+//CARD GALLERY
+// $.ajax({
+//     url: 'https://api.scryfall.com/cards/search?order=set&q=e%3Aaer&unique=prints'
+// }).then(
+//     (data) => {
+//         $('.carousel-images').on('click' , () => {
+//             for(let i = 0; i > data.data.length; i++) {
+//                 $('<img>').attr('src' , data.data[i].image_uris.normal).appendTo($('#bottom'));
+//             } 
+//         })
+//     }
+// )
+
+
+// $('.carousel-images').on('click' , () => {
+//   $.ajax({
+//         //URL FOR CARD GALLERY
+//         url: 'https://api.scryfall.com/cards/search?order=set&q=e%3Aaer&unique=prints',   
+//   }).then(
+//       (data) => {
+//         for(let i = 0; i < data.data.length; i++) {
+//             $('<img>').attr('src' , data.data[i].image_uris.normal).appendTo($('#bottom'));
+//         }
+//       }
+//   )
+// })
+
 
 //////////////////////////////////////////////////////////////////////
 
 
+//APIs THAT WORK FOR ME
+/*
+    -THIS GETS ME THE CARD IMAGE GALLERY SPECIFICALLY FOR AER: WORKS!
+    url: `https://api.scryfall.com/cards/search?order=set&q=e%3Aaer&unique=prints`
+
+
+    -THIS GETS ME THE SET OBJECT WITH POSSIBLY THE SET ICON... (ICON_SVG_URI)
+    url: `https://api.scryfall.com/sets/aer`
+
+
+    -URL SYNTAX I THINK I NEED TO USE
+    url: `https://api.scryfall.com/cards/search?order=set&q=e%3A${$img}&unique=prints`
+
+
+/             //SET ICONS
+//             $('<img class = SetSymbols>').attr('src', data.data[i].icon_svg_uri).appendTo($('#bottom'));
+//             //SET NAMES
+//             //$('<p>').text(data.data[i].name).appendTo('#bottom');
+//             //CARD GALLERY
+//             //$('<img>').attr('src' , data.data[i].image_uris.normal).appendTo('#bottom');
+//         //NOT REALLY SURE WHAT THIS IS RETURNING
+//         url: "https://c2.scryfall.com/file/scryfall-symbols/sets/aer.svg?1598241600",
+//         //URL FOR CARD GALLERY
+//         url: 'https://api.scryfall.com/cards/search?order=set&q=e%3Aaer&unique=prints',
+//          //URL FOR SET NAMES AND ICONS
+//         url: `https://api.scryfall.com/sets`
+*/
 
 
 
 
+// let myArray = []
 
 
 
+// let test = () => {
+
+//     $.ajax({
+//         url: `https://api.scryfall.com/sets`
+//     }).then (
+//         (data) => {
+//             myArray = data.data;
+//             console.log(myArray);
+//             for(let i = 0; i < data.data.length; i++) {
+//                 myArray.push({
+//                     Name: data.data[i].name,
+//                     Icon: data.data[i].icon_svg_uri,
+//                     Gallery: data.data[i].search_uri
+//                 })
+//                 //$('<p>').text(data.data[i].name).prependTo('#bottom');
+//             //}
+//                $('.carousel-images').on('click' , (event) => {
+//                 myArray.forEach(element => {
+//                     $('<img>').attr('src' , myArray.Gallery).appendTo($('#bottom'));
+//                 });
+        
+//             })
 
 
-//////////// CAROUSEL CLICK = DISPLAY SET ///////////
-                //use sets/name for h1
-
-
-
-
-
-const $makeGallery = () => {
-    for(let i = 0; i < imagesArray.length; i++) {
-        $cardImageGalery = $('<img>').attr({
-            src: imagesArray[i],
-            title: titlesArray[i]
-    });
-    }
-}
-
-const $img = $('<img>').attr('title' , 'aer')
-$('.carousel-images').on('click' , (event) =>{
-    $.ajax({
-        //url: `https://api.scryfall.com/cards/search?order=set&q=e%3A${$img}&unique=prints`
-        url: `https://api.scryfall.com/cards/search?order=set&q=e%3Aaer&unique=prints`
-    }).then (
-        (data) => {
             
-            //console.log(data.data)
-            console.log(data);
-           for(let i = 0; i < data.data.length; i++) {
-            $('<img>').attr('src', data.data[i].image_uris.normal).appendTo($('#bottom'));
-           }
-        }
-    )
-})
+//         }
+
+//     })
+// }
+// test();
 
 
-
-//make an array of objects that has all the information I need. The loop through that and create a variable for the current index. Then `` with the thing i need at current index
-
-
-const $cardImageGalery = [
-    {
-        set_name: 'Aether Revolt',
-        imgUrl: 'Aether_Revolt.png',
-    }
-
-]
-
-
+// $('.carousel-images').on('click' , () => {
+//     $.ajax({
+//           //URL FOR CARD GALLERY
+//           url: 'https://api.scryfall.com/cards/search?order=set&q=e%3Aaer&unique=prints',   
+//     }).then(
+//         (data) => {
+//             for(let i = 0; i < data.data.length; i++) {
+//                $('<img>').attr('src' , myArray[i].Gallery).appendTo($('#bottom'));
+//             }
+//         })}
+// )

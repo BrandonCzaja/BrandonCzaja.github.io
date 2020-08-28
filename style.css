@@ -122,16 +122,16 @@ dl {
 
 /*Image Container*/
 .carousel-images {
-    background-color: lightgray;
     position: relative;
-    height: 400px;
+    height: 400px; 
     border-radius: 10px;
-    border: 5px solid goldenrod;
     margin-top: 30%;
     padding: 10px;
+    border: 5px solid goldenrod;
+    background-color: white;
 } 
 
-/*Set Image*/
+/*Hidden Set Icons*/
 .carousel-images img {
     display: none;
     height: 400px;
@@ -141,6 +141,7 @@ dl {
 /*NEEDS TO BECOME A BUTTON*/
 .carousel-images img:first-of-type {
     display: block;
+ 
 }
 
 /*CAROUSEL BUTTONS*/
@@ -172,6 +173,20 @@ dl {
 
 
 
+
+
+
+
+
+/*SET ICONS*/
+
+.SetSymbols {
+    height: 50px;
+    width: 50px;
+    background-color: 
+    white;
+    color: black;
+}
 
 
 
