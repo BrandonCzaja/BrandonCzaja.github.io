@@ -45,75 +45,115 @@ $('form').on('submit' , (event) => {
 
 ///////////////////////    Carousel    //////////////////////////////////
 /*
-        -POTENTIAL NEW API. SAME AS THE CARD SEARCH API BUT FOR SETS NOT CARDS
-        https://api.magicthegathering.io/v1/sets?SETNAME= THEN HOWEVER I CALL IT
+-POTENTIAL NEW API. SAME AS THE CARD SEARCH API BUT FOR SETS NOT CARDS
+https://api.magicthegathering.io/v1/sets?SETNAME= THEN HOWEVER I CALL IT
 
-        -I WONDER IF I CAN CHANGE THE CAROUSEL TO BE ALL IMAGE VARIATIONS OF THE CARD.
-
-        $.ajax({
-            url: 'https://api.magicthegathering.io/v1/sets?'
-        }).then(
-            (data) => {
-                console.log(data);
-                let highestIndex = data.length-1;
-                let currentImageIndex = 0;
-
-                for(let i = 0; i < highestIndex; i++) {
-                    $('<img class = SetSymbols>').attr({src: data[i].})
-                }
-            }
-        )
-
-
+-I WONDER IF I CAN CHANGE THE CAROUSEL TO BE ALL IMAGE VARIATIONS OF THE CARD.
 */
+
+        // $.ajax({
+        //     url: 'https://api.magicthegathering.io/v1/sets?'
+        // }).then(
+        //     (data) => {
+        //         console.log(data);
+        //         let highestIndex = data.length-1;
+        //         let currentImageIndex = 0;
+
+        //         for(let i = 0; i < highestIndex; i++) {
+        //             $('<img class = SetSymbols>').attr({src: data[i].imageUrl}).appendTo($('.carousel-images'));
+        //         }
+                
+        //         //Next Button
+        //         $('.next').on('click' , () => {
+        //             console.log('next was clicked');
+        //             $('.carousel-images').children().eq(currentImageIndex).css('display' , 'none');
+                
+        //             if(currentImageIndex < highestIndex) {
+        //                 currentImageIndex++;
+        //             } else {
+        //                 currentImageIndex = 0;
+        //             }
+                
+        //             $('.carousel-images').children().eq(currentImageIndex).css('display' , 'block');
+        //         })
+
+        //         //Previous Buttons
+        //         $('.previous').on('click' , () => {
+        //             $('.carousel-images').children().eq(currentImageIndex).css('display', 'none');
+                
+        //             if(currentImageIndex > 0) {
+        //                 currentImageIndex--;
+        //             } else {
+        //                 currentImageIndex = highestIndex;
+        //             }
+                
+        //             $('.carousel-images').children().eq(currentImageIndex).css('display', 'block');
+        //         })
+        //     }
+        // )
+
+
+
+ 
+          
+          
+
+          
 ////////////////////////////////////////////////////////////////////
-
-
 //SET ICONS
-//   $.ajax({
-//     //URL FOR SET NAMES AND ICONS
-//     url: `https://api.scryfall.com/sets` 
-//   }).then(
-//       (data) =>{
-//         //   console.log(data)
-//           let highestIndex = data.data.length-2;
-//           let currentImageIndex = 0;
+                                    //I WANT TO LIMIT MY SEARCH TO JUST CORE AND EXPANSION SETS
 
-//           for(let i = 0; i < highestIndex; i++){
-//               $('<img class = SetSymbols>').attr({src: data.data[i].icon_svg_uri , id: `${i}`}).appendTo($('.carousel-images'));
-//           }          
+  $.ajax({
+    //URL FOR SET NAMES AND ICONS
+    url: `https://api.scryfall.com/sets/set_type=st:expansion` 
+  }).then(
+      (data) =>{
+            console.log(data)
+            let highestIndex = data.data.length;
+            let currentImageIndex = 0;
+
+            for(let i = 0; i < highestIndex; i++){
+                $('<img class = SetSymbols>').attr({src: data.data[i].icon_svg_uri , class: `${i}`}).appendTo($('.carousel-images'));
+                
+                $('.set-search').text(data.data[currentImageIndex].name);      
+            }          
+            
+            
+
+
+
+          //Next Button
+          $('.next').on('click' , () => {
+              $('.carousel-images').children().eq(currentImageIndex).css('display' , 'none');
+
+              if(currentImageIndex < highestIndex) {
+                  currentImageIndex++;
+              } else {
+                  currentImageIndex = 0;
+              }
           
-//           //Next Button
-//           $('.next').on('click' , () => {
-//               console.log('next was clicked');
-//               $('.carousel-images').children().eq(currentImageIndex).css('display' , 'none');
+              $('.carousel-images').children().eq(currentImageIndex).css('display' , 'block');
+              $('.set-search').text(data.data[currentImageIndex].name);
+          })
           
-//               if(currentImageIndex < highestIndex) {
-//                   currentImageIndex++;
-//               } else {
-//                   currentImageIndex = 0;
-//               }
+          //Previous Buttons
+          $('.previous').on('click' , () => {
+              $('.carousel-images').children().eq(currentImageIndex).css('display', 'none');
           
-//               $('.carousel-images').children().eq(currentImageIndex).css('display' , 'block');
-//           })
+              if(currentImageIndex > 0) {
+                  currentImageIndex--;
+              } else {
+                  currentImageIndex = highestIndex;
+              }
           
-//           //Previous Buttons
-//           $('.previous').on('click' , () => {
-//               $('.carousel-images').children().eq(currentImageIndex).css('display', 'none');
-          
-//               if(currentImageIndex > 0) {
-//                   currentImageIndex--;
-//               } else {
-//                   currentImageIndex = highestIndex;
-//               }
-          
-//               $('.carousel-images').children().eq(currentImageIndex).css('display', 'block');
-//           })
+              $('.carousel-images').children().eq(currentImageIndex).css('display', 'block');
+              $('.set-search').text(data.data[currentImageIndex].name);
+          })
 
           
 
-//       }
-//   )
+      }
+  )
 
 
 
