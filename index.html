@@ -6,22 +6,24 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="app.js" defer></script>
 </head>
 <body>
+    <!--LEFT SIDE OF SCREEN-->
     <div class = 'split left'>
-        
         <h1 id = 'card-search'>Search By Card Name</h1>
         <div class = 'left-centered'>
             <div id = 'card-image'></div>
-            <!--SEARCH BY CARD-->
+            <!--INPUT CARD INFORMATION-->
             <form>
                 <input type="text" id="search" placeholder="Search for card">
                 <input type="submit" id="submit">
             </form>
                 <br>
-                <dl>
+            <!--RETURNED DATA-->    
+            <dl>
                 <dt><h2>Mana Cost</h2></dt>
                 <dd id = 'mana'>loading...</dd>
 
@@ -36,30 +38,31 @@
 
                 <dt><h2>Power & Toughness</h2></dt>
                 <dd id = 'power'>loading...</dd>
-
-                </dl>  
+            </dl>  
         </div>
     </div>
     
     <br>
     <br>
-    
+    <!--RIGHT SIDE OF SCREEN-->
     <div class = 'split right'>
         <h1 class = 'set-search'></h1>
         <div class = 'right-centered'>
-                <div class = 'carousel-container'>
-                    <div class = 'carousel-button previous'>
+            <!--CAROUSEL-->
+            <div class = 'carousel-container'>
+                <!--PREVIOUS BUTTON-->
+                <div class = 'carousel-button previous'>
                     <span class = 'lnr lnr-chevron-left'></span>
                 </div>
+                <!--CAROUSEL IMAGES-->
                 <div class = 'carousel-images'></div>
-                    <div class = 'carousel-button next'>
-                        <span class = 'lnr lnr-chevron-right'></span>
-                    </div>
+                <!--NEXT BUTTON-->
+                <div class = 'carousel-button next'>
+                    <span class = 'lnr lnr-chevron-right'></span>
                 </div>
-                
+            </div>     
         </div>
     </div>
-    <div id = 'bottom'></div>
 </body>
 </html>
 

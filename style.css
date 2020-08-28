@@ -4,10 +4,13 @@ body {
     background-repeat: repeat;
     background-size: cover;
     color: white;
+    font-family: 'Merriweather' , serif;
+    color: rgb(246, 160, 71);
+    text-shadow: -2px 2px 0px rgb(192, 22, 34), 2px 2px 0px rgb(192, 22, 34), 2px -2px 0px rgb(192, 22, 34), -2px -2px 0px rgb(192, 22, 34);
 }
 
 .split {
-    height: 60%;
+    height: 100%;
     width: 50%;
     position: fixed;
     z-index: 1;
@@ -17,34 +20,17 @@ body {
     margin: 0px;
 }
 
-
-
-/*THIS WILL BE WHERE THE CARD IMAGE GALLERY DISPLAYS*/
-#bottom {
-    height: 40%;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    overflow: auto;
-    padding: 0px;
-    margin: 0px;
-}
-
-
-
 /*/////////////////////////      LEFT        /////////////////////////////*/
 
 #card-search {
-    font-size: 90px;
+    font-size: 700%;
     max-width: 100%;
     text-align: center;
 }
 
 .left-centered{
-    font-size: large;
     position: absolute;
-    top: 55%;
+    top: 48%;
     left: 46%; 
     width: 68%;
     height: 70%;
@@ -55,13 +41,13 @@ body {
 /*    SEARCH BY CARD          */
 form {
     display: inline-block;
-}
+}  
 
 dl {
     display: inline-block;
     width: 30%;
+    font-size: xx-large;
 }
-
 
 
 /*Card Hover*/
@@ -72,32 +58,15 @@ dl {
     top: 10%;
 }
 #card-image:hover {
-    transform: scale(2);
-    left: 70%;
-    top: 15%;
+    transform: scale(3);
+    left: 80%;
+    top: 20%;
 }
 /*/////////////////////////////////////////////////////////////////////*/
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*////////////////////////  RIGHT SIDE  ///////////////////////////////*/
-
-/*I NEED THIS TO CHANGE TO THE SET NAME WHEN I CLICK THE BUTTONS*/
-#set-search {
-    font-size: 100px;
+.set-search {
+    font-size: 700%;
     max-width: 100%;
     text-align: center;
 }
@@ -108,7 +77,7 @@ dl {
 
 .right-centered{
     position: absolute;
-    top: 30%;
+    top: 20%;
     left: 55%;
     text-align: center;
     transform: translate(-50%, -50%);
@@ -138,10 +107,9 @@ dl {
     width: 400px;
 }
 
-/*NEEDS TO BECOME A BUTTON*/
+/*WILL BECOME A BUTTON WHEN I IMPLEMENT THE CARD GALLERY*/
 .carousel-images img:first-of-type {
     display: block;
- 
 }
 
 /*CAROUSEL BUTTONS*/
@@ -157,7 +125,9 @@ dl {
     border-radius: 50%;
     text-align: center;
     box-shadow: 3px 3px darkgrey;
+    text-shadow: none;
   }
+
 .carousel-button:hover {
     cursor: pointer;
     background: grey;
@@ -166,29 +136,14 @@ dl {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-/*SET ICONS*/
-
-.SetSymbols {
-    height: 50px;
-    width: 50px;
-    background-color: 
-    white;
-    color: black;
-}
-
-
-
-
-
+/*THIS WILL BE WHERE THE CARD IMAGE GALLERY DISPLAYS*/
+/* #bottom {
+    height: 40%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    padding: 0px;
+    margin: 0px;
+} */
