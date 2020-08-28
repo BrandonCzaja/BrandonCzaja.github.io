@@ -12,9 +12,9 @@ $('form').on('submit' , (event) => {
             // } else {
             // $('#card-text').html(data.cards[0].text);
             // }IF DATA.CARDS[0].NAME != INPUT => ERROR
-            
+
                 //Card Image
-                $('#card-image').html(`<img src = "${data.cards[0].imageUrl}" 'width = 25%'>`);
+                $('#card-image').html(`<img src = "${data.cards[0].imageUrl}">`);
                 //Mana Cost
                 $('#mana').html(data.cards[0].manaCost);
                 //Type

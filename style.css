@@ -1,6 +1,7 @@
-/*General*/
+/*/////////////////////////      GENERAL       /////////////////////////////*/
 body {
-    background-image: url('mtgBackground3.jpg');
+    /* background-image: url('mtgBackground3.jpg'); */
+    background-image: url('https://www.google.com/imgres?imgurl=https%3A%2F%2Fcdn.theouterhaven.net%2Fwp-content%2Fuploads%2F2018%2F01%2Fmtg-header-750x400.jpg&imgrefurl=https%3A%2F%2Fwww.theouterhaven.net%2F2018%2F01%2Fwizards-of-the-coast-background-checks%2F&tbnid=knWqmQuO1gbkZM&vet=12ahUKEwiy7aSz5b7rAhVJLN8KHcf6AAsQMygVegUIARDQAQ..i&docid=nsxLLAfiTEOfQM&w=750&h=400&q=mtg%20background%20images&ved=2ahUKEwiy7aSz5b7rAhVJLN8KHcf6AAsQMygVegUIARDQAQ');
     background-repeat: repeat;
     background-size: cover;
     color: white;
@@ -16,8 +17,6 @@ body {
     z-index: 1;
     top: 0;
     overflow: auto;
-    padding: 0px;
-    margin: 0px;
 }
 
 /*/////////////////////////      LEFT        /////////////////////////////*/
@@ -92,7 +91,7 @@ dl {
 /*Image Container*/
 .carousel-images {
     position: relative;
-    height: 400px; 
+    height: 100%; 
     border-radius: 10px;
     margin-top: 30%;
     padding: 10px;
