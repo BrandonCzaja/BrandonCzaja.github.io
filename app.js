@@ -105,14 +105,14 @@ https://api.magicthegathering.io/v1/sets?SETNAME= THEN HOWEVER I CALL IT
 
   $.ajax({
     //URL FOR SET NAMES AND ICONS
-    url: `https://api.scryfall.com/sets/set_type=st:expansion` 
+    url: `https://api.scryfall.com/sets/` 
   }).then(
       (data) =>{
-            console.log(data)
-            let highestIndex = data.data.length;
+            //console.log(data)
+            let highestIndex = data.data.length-1;
             let currentImageIndex = 0;
 
-            for(let i = 0; i < highestIndex; i++){
+            for(let i = 0; i <= highestIndex; i++){
                 $('<img class = SetSymbols>').attr({src: data.data[i].icon_svg_uri , class: `${i}`}).appendTo($('.carousel-images'));
                 
                 $('.set-search').text(data.data[currentImageIndex].name);      
