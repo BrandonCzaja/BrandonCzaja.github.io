@@ -1,6 +1,5 @@
 /*/////////////////////////      GENERAL       /////////////////////////////*/
 body {
-    /* background-image: url('mtgBackground3.jpg'); */
     background-image: url('https://cdn.theouterhaven.net/wp-content/uploads/2018/01/mtg-header-750x400.jpg');
     background-repeat: repeat;
     background-size: cover;
@@ -62,7 +61,7 @@ dl {
 }
 /*/////////////////////////////////////////////////////////////////////*/
 
-/*////////////////////////  RIGHT SIDE  ///////////////////////////////*/
+/*////////////////////////  RIGHT SIDE  //////////////////////////////*/
 .set-search {
     font-size: 700%;
     max-width: 100%;
@@ -79,7 +78,7 @@ dl {
     left: 55%;
     text-align: center;
     transform: translate(-50%, -50%);
-}
+} 
 
 /*CAROUSEL*/
 .carousel-container {
@@ -135,7 +134,7 @@ dl {
 
 
 /*THIS WILL BE WHERE THE CARD IMAGE GALLERY DISPLAYS*/
-/* #bottom {
+#bottom {
     height: 40%;
     position: fixed;
     left: 0;
@@ -144,4 +143,11 @@ dl {
     overflow: auto;
     padding: 0px;
     margin: 0px;
-} */
+}
+
+
+
+
+
+
+/* ^^^^^^^ ORIGINAL CODE ^^^^^^^*/
