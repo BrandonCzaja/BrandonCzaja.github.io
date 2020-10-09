@@ -1,6 +1,7 @@
 /*/////////////////////////      GENERAL       /////////////////////////////*/
 body {
-    background-image: url('https://cdn.theouterhaven.net/wp-content/uploads/2018/01/mtg-header-750x400.jpg');
+    /* background-image: url('https://cdn.theouterhaven.net/wp-content/uploads/2018/01/mtg-header-750x400.jpg'); */
+    background-image: url('../BrandonCzaja.github.io/mtgBackground3.jpg');
     background-repeat: repeat;
     background-size: cover;
     font-family: 'Merriweather' , serif;
@@ -144,10 +145,3 @@ dl {
     padding: 0px;
     margin: 0px;
 }
-
-
-
-
-
-
-/* ^^^^^^^ ORIGINAL CODE ^^^^^^^*/

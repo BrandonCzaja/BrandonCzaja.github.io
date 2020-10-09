@@ -6,13 +6,7 @@ $('form').on('submit' , (event) => {
         url:`https://api.magicthegathering.io/v1/cards?name=${card}`
     }).then(
         (data) => {
-            console.log(data);
-            // if(data.cards[0].text === undefined) {
-            //     $('#card-text').text('This card does not have any rules text');
-            // } else {
-            // $('#card-text').html(data.cards[0].text);
-            // }IF DATA.CARDS[0].NAME != INPUT => ERROR
-
+            //console.log(data);
                 //Card Image
                 $('#card-image').html(`<img src = "${data.cards[0].imageUrl}">`);
                 //Mana Cost
@@ -88,15 +82,6 @@ url: `https://api.scryfall.com/sets/`
 
 
 
-/*                               THINGS TO ADD IN THE FUTURE
-REJECTION NOTICE IF CARD DOES NOT EXIST
-CARD IMAGE GALLERY
-DECK BUILDING FEATURE
-DRAFTING FEATURE
-LIMIT MY CAROUSEL TO CORE AND EXPANSION SETS INSTEAD OF EVERY PRINTING
-*/ 
-
-
 //CARD GALLERY
 // $.ajax({
 //     url: 'https://api.scryfall.com/cards/search?order=set&q=e%3Aaer&unique=prints'
@@ -123,3 +108,17 @@ LIMIT MY CAROUSEL TO CORE AND EXPANSION SETS INSTEAD OF EVERY PRINTING
 //       }
 //   )
 // })
+
+
+
+
+
+
+
+/*                               THINGS TO ADD IN THE FUTURE
+REJECTION NOTICE IF CARD DOES NOT EXIST
+CARD IMAGE GALLERY
+DECK BUILDING FEATURE
+DRAFTING FEATURE
+LIMIT MY CAROUSEL TO CORE AND EXPANSION SETS INSTEAD OF EVERY PRINTING
+*/ 
