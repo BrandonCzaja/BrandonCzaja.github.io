@@ -1,0 +1,32 @@
+My Notes:
+  -Things I want to include
+    -Carousel of the sets 
+    -Sticky navBar with dropdown
+    -Be able to drag a set and be able to open it up to see the whole card list
+  -Requirements
+    -Commit every day 
+    -Include a ReadMe.md file explaining what tech was used, approach taken (steps), a link to the live site, installation instructions, and any unsolved problems
+    -MUST BE RESPONSIVE TO ALL SCREEN SIZES... AND BE FUNCTIONAL ON ALL THOSE SCREENS AS WELL
+    -Carousel, drag and drop, sticky nav, tooltips, animations, etc required. One or more
+    -Built with
+      -HTML, CSS, JS, jQuery
+      -Use Ajax to make a request to an external source and insert some of the data retrieved into the DOM
+
+    -TIPS:
+      -DO A CONSOLE LOG OF YOUR API ASAP TO MAKE SURE IT WORKS THE WAY YOU EXPECT IT TO
+
+    -Stretch Goals 
+      -Make a game using API data and keep track of score
+      -Save user data on local storage
+
+    -Presentation
+      * Be approximately 5 minutes in length
+      * Show off all features of the app
+      * Explain the technical details
+      * Explain the technical challenges
+      * Explain which improvements you might make
+
+    -Be ready to share you code with class and instructors so make sure its clean (Use plenty of comments to make it obvious)
+
+
+
