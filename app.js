@@ -58,6 +58,7 @@ crossDomain: true,
         console.log(data)
         let highestIndex = data.data.length-1;
         let currentImageIndex = 0;
+        //This makes the carousel
         for(let i = 0; i <= highestIndex; i++){
             $('<img class = SetSymbols>').attr({src: data.data[i].icon_svg_uri , class: `${i}`}).appendTo($('.carousel-images'));
             $('.set-search').text(data.data[currentImageIndex].name);  
@@ -65,47 +66,33 @@ crossDomain: true,
 
 
 
-        //Card Image Gallery
+     
+        
 
 
+    //Card Gallery 
+   //Card Image Gallery
+        // $('.carousel-images').on('click', () => {
+        //     for(let j = 0; j <= highestIndex; j++){
+        //         //Can I change it to the icon class name?
+        //         $("<img>").attr({src: data.data[j].search_uri}).appendTo($('#bottom'))
+        //     }
+        // })
 
-    //Card Gallery Can Go Here
-
+    //const setArray = data.data
         //Card Image Gallery
     //    console.log(data.data[1].scryfall_uri)
     //    const setArray = data.data[608].name
     // const setArray = data.data[608].search_uri
     
-    //console.log(`This is my setArray: ${setArray}`)
 
-    const setArray = data.data
+    //This will print out all the set names. I need to change .text() value to the icon value
     // $('.carousel-images').on('click', () => {
-      
+    //     for(let i = 0; i <= highestIndex; i++){
+    //         //Can I change it to the icon class name?
+    //         $("<p></p>").text(data.data[i].name).appendTo($('#bottom'))
+    //     }
     // })
-
-    $('.carousel-images').on('click', () => {
-        for(let i = 0; i <= highestIndex; i++){
-            $("<p></p>").text(data.data[i].name).appendTo($('#bottom'))
-        }
-    })
-
-    // for(let i = 0; i <= data.data.length-1; i++) {
-    //     $(`.carousel-images`).on('click', () => {
-    //         ($('<p>').attr('src' , data.data[i].name).appendTo($('#bottom')))
-    //     })
-    //  } 
-
-    //This gets me the names of each set
-    //const setArray = data.data
-    // setArray.forEach(data => {
-    //     console.log(data.name)
-    // })
-
-
-
- //    setArray.forEach(data => console.log(data.scryfall_uri))
-
- 
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////
