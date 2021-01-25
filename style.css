@@ -1,147 +1,145 @@
 /*/////////////////////////      GENERAL       /////////////////////////////*/
 body {
-  /* background-image: url('https://cdn.theouterhaven.net/wp-content/uploads/2018/01/mtg-header-750x400.jpg'); */
-  background-image: url("https://i.imgur.com/KaXNjLz.jpg");
-  background-repeat: repeat;
-  background-size: cover;
-  font-family: "Merriweather", serif;
-  color: rgb(246, 160, 71);
-  text-shadow: -2px 2px 0px rgb(192, 22, 34), 2px 2px 0px rgb(192, 22, 34),
-    2px -2px 0px rgb(192, 22, 34), -2px -2px 0px rgb(192, 22, 34);
+    background-image: url(./mtgBackground3.jpg);
+    background-repeat: repeat;
+    background-size: cover;
+    font-family: "Merriweather", serif;
+    color: rgb(246, 160, 71);
+    text-shadow: -2px 2px 0px rgb(192, 22, 34), 2px 2px 0px rgb(192, 22, 34), 2px -2px 0px rgb(192, 22, 34), -2px -2px 0px rgb(192, 22, 34);
 }
 
 .split {
-  height: 100%;
-  width: 50%;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  overflow: auto;
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow: auto;
 }
 
 /*/////////////////////////      LEFT        /////////////////////////////*/
 
 #card-search {
-  font-size: 700%;
-  max-width: 100%;
-  text-align: center;
+    font-size: 700%;
+    max-width: 100%;
+    text-align: center;
 }
 
 .left-centered {
-  position: absolute;
-  top: 48%;
-  left: 46%;
-  width: 68%;
-  height: 70%;
-  text-align: left;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 48%;
+    left: 46%;
+    width: 68%;
+    height: 70%;
+    text-align: left;
+    transform: translate(-50%, -50%);
 }
 
 /*    SEARCH BY CARD          */
 form {
-  display: inline-block;
+    display: inline-block;
 }
 
 dl {
-  display: inline-block;
-  width: 30%;
-  font-size: xx-large;
+    display: inline-block;
+    width: 30%;
+    font-size: xx-large;
 }
 
 /*Card Hover*/
 #card-image {
-  display: inline-block;
-  position: absolute;
-  left: 35%;
-  top: 10%;
+    display: inline-block;
+    position: absolute;
+    left: 35%;
+    top: 10%;
 }
 #card-image:hover {
-  transform: scale(3);
-  left: 80%;
-  top: 20%;
+    transform: scale(3);
+    left: 80%;
+    top: 20%;
 }
 /*/////////////////////////////////////////////////////////////////////*/
 
 /*////////////////////////  RIGHT SIDE  //////////////////////////////*/
 .set-search {
-  font-size: 700%;
-  max-width: 100%;
-  text-align: center;
+    font-size: 700%;
+    max-width: 100%;
+    text-align: center;
 }
 
 .right {
-  right: -1%;
+    right: -1%;
 }
 
 .right-centered {
-  position: absolute;
-  top: 20%;
-  left: 55%;
-  text-align: center;
-  transform: translate(-50%, -50%);
+    position: absolute;
+    top: 20%;
+    left: 55%;
+    text-align: center;
+    transform: translate(-50%, -50%);
 }
 
 /*CAROUSEL*/
 .carousel-container {
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }
 
 /*Image Container*/
 .carousel-images {
-  position: relative;
-  height: 100%;
-  border-radius: 10px;
-  margin-top: 30%;
-  padding: 10px;
-  border: 5px solid goldenrod;
-  background-color: white;
-  cursor: pointer;
+    position: relative;
+    height: 100%;
+    border-radius: 10px;
+    margin-top: 30%;
+    padding: 10px;
+    border: 5px solid goldenrod;
+    background-color: white;
+    cursor: pointer;
 }
 
 /*Hidden Set Icons*/
 .carousel-images img {
-  display: none;
-  height: 400px;
-  width: 400px;
+    display: none;
+    height: 400px;
+    width: 400px;
 }
 
 /*WILL BECOME A BUTTON WHEN I IMPLEMENT THE CARD GALLERY*/
 .carousel-images img:first-of-type {
-  display: block;
+    display: block;
 }
 
 /*CAROUSEL BUTTONS*/
 .carousel-button {
-  font-size: xx-large;
-  position: relative;
-  align-self: center;
-  background: lightgray;
-  color: black;
-  padding: 10px;
-  margin: 30%;
-  margin-top: 60%;
-  border-radius: 50%;
-  text-align: center;
-  box-shadow: 3px 3px darkgrey;
-  text-shadow: none;
+    font-size: xx-large;
+    position: relative;
+    align-self: center;
+    background: lightgray;
+    color: black;
+    padding: 10px;
+    margin: 30%;
+    margin-top: 60%;
+    border-radius: 50%;
+    text-align: center;
+    box-shadow: 3px 3px darkgrey;
+    text-shadow: none;
 }
 
 .carousel-button:hover {
-  cursor: pointer;
-  background: grey;
-  box-shadow: 3px 3px black;
-  color: white;
+    cursor: pointer;
+    background: grey;
+    box-shadow: 3px 3px black;
+    color: white;
 }
 
 /*THIS WILL BE WHERE THE CARD IMAGE GALLERY DISPLAYS*/
 #bottom {
-  height: 40%;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  overflow: auto;
-  padding: 0px;
-  margin: 0px;
+    height: 40%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: auto;
+    padding: 0px;
+    margin: 0px;
 }
