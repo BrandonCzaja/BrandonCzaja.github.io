@@ -46,21 +46,25 @@ $.ajax({
     crossDomain: true,
 }).then((data) => {
     let highestIndex = data.data.length - 1;
+    let setName = data.data[highestIndex].name;
     let currentImageIndex = 0;
+
     //This makes the carousel
     for (let i = highestIndex; i >= 0; i--) {
+        // Set Symbol
         $("<img class = SetSymbols>")
             .attr({ src: data.data[i].icon_svg_uri, class: `${i}` })
             .appendTo($(".carousel-images"));
-        $(".set-search").text(data.data[currentImageIndex].name);
+        // $(".set-search").text(setName);
     }
-
+    $(".set-search").text(setName);
     ////////////////////////////////////////////////////////////////////////////////////////////////
-
     //Next Button
     $(".next").on("click", () => {
         $(".carousel-images").children().eq(currentImageIndex).css("display", "none");
 
+        // Try using array.reverse => sets = data.data.reverse()
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
         if (currentImageIndex < highestIndex) {
             currentImageIndex++;
         } else {
