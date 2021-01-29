@@ -1,25 +1,45 @@
-/*/////////////////////////      GENERAL       /////////////////////////////*/
-body {
-    background-image: url(./mtgBackground3.jpg);
-    background-repeat: repeat;
-    background-size: cover;
-    font-family: "Merriweather", serif;
-    color: rgb(246, 160, 71);
-    text-shadow: -2px 2px 0px rgb(192, 22, 34), 2px 2px 0px rgb(192, 22, 34), 2px -2px 0px rgb(192, 22, 34), -2px -2px 0px rgb(192, 22, 34);
+/* /////////////////////////////////////////////// */
+/* MOBILE*/
+
+@media screen and (min-width: 360px) and (max-width: 767px) {
+    body {
+        background-image: url(./mtgBackground3.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        font-family: "Merriweather", serif;
+        color: rgb(246, 160, 71);
+        text-shadow: -2px 2px 0px rgb(192, 22, 34), 2px 2px 0px rgb(192, 22, 34), 2px -2px 0px rgb(192, 22, 34), -2px -2px 0px rgb(192, 22, 34);
+    }
 }
 
-.split {
+/* /////////////////////////////////////////////////// */
+/* For Tablet */
+/* @media screen and (min-width: 768px) {
+} */
+
+/* For Laptop */
+/* @media screen and (min-width: 1279px) {
+} */
+
+/* For Desktop */
+/* @media screen and (min-width: 1920px) {
+} */
+
+/*/////////////////////////      GENERAL       /////////////////////////////*/
+
+/* .split {
     height: 100%;
     width: 50%;
     position: fixed;
     z-index: 1;
     top: 0;
     overflow: auto;
-}
+} */
 
 /*/////////////////////////      LEFT        /////////////////////////////*/
 
-#card-search {
+/* #card-search {
     font-size: 700%;
     max-width: 100%;
     text-align: center;
@@ -33,10 +53,10 @@ body {
     height: 70%;
     text-align: left;
     transform: translate(-50%, -50%);
-}
+} */
 
 /*    SEARCH BY CARD          */
-form {
+/* form {
     display: inline-block;
 }
 
@@ -44,10 +64,10 @@ dl {
     display: inline-block;
     width: 30%;
     font-size: xx-large;
-}
+} */
 
 /*Card Hover*/
-#card-image {
+/* #card-image {
     display: inline-block;
     position: absolute;
     left: 35%;
@@ -57,11 +77,11 @@ dl {
     transform: scale(3);
     left: 80%;
     top: 20%;
-}
+} */
 /*/////////////////////////////////////////////////////////////////////*/
 
 /*////////////////////////  RIGHT SIDE  //////////////////////////////*/
-.set-search {
+/* .set-search {
     font-size: 700%;
     max-width: 100%;
     text-align: center;
@@ -77,16 +97,16 @@ dl {
     left: 55%;
     text-align: center;
     transform: translate(-50%, -50%);
-}
+} */
 
 /*CAROUSEL*/
-.carousel-container {
+/* .carousel-container {
     display: flex;
     justify-content: space-around;
-}
+} */
 
 /*Image Container*/
-.carousel-images {
+/* .carousel-images {
     position: relative;
     height: 100%;
     border-radius: 10px;
@@ -95,22 +115,22 @@ dl {
     border: 5px solid goldenrod;
     background-color: white;
     cursor: pointer;
-}
+} */
 
 /*Hidden Set Icons*/
-.carousel-images img {
+/* .carousel-images img {
     display: none;
     height: 400px;
     width: 400px;
-}
+} */
 
 /*WILL BECOME A BUTTON WHEN I IMPLEMENT THE CARD GALLERY*/
-.carousel-images img:first-of-type {
+/* .carousel-images img:first-of-type {
     display: block;
-}
+} */
 
 /*CAROUSEL BUTTONS*/
-.carousel-button {
+/* .carousel-button {
     font-size: xx-large;
     position: relative;
     align-self: center;
@@ -130,10 +150,10 @@ dl {
     background: grey;
     box-shadow: 3px 3px black;
     color: white;
-}
+} */
 
 /*THIS WILL BE WHERE THE CARD IMAGE GALLERY DISPLAYS*/
-#bottom {
+/* #bottom {
     height: 40%;
     position: fixed;
     left: 0;
@@ -142,7 +162,7 @@ dl {
     overflow: auto;
     padding: 0px;
     margin: 0px;
-}
+} */
 
 /***********************************************************************/
 /***********************************************************************/
@@ -297,18 +317,3 @@ dl {
     transition: color 0.4s ease;
   }
    */
-/* /////////////////////////////////////////////// */
-/* MOBILE*/
-
-/* /////////////////////////////////////////////////// */
-/* For Tablet */
-@media screen and (min-width: 768px) {
-}
-
-/* For Laptop */
-@media screen and (min-width: 1279px) {
-}
-
-/* For Desktop */
-@media screen and (min-width: 1920px) {
-}
