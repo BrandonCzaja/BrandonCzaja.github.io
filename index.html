@@ -16,59 +16,61 @@
         <script src="app.js" defer></script>
     </head>
     <body>
-        <!--LEFT SIDE OF SCREEN-->
-        <div class="split left">
-            <h1 id="card-search">Search By Card Name</h1>
-            <div class="left-centered">
-                <div id="card-image"></div>
-                <!--INPUT CARD INFORMATION-->
-                <form>
-                    <input type="text" id="search" placeholder="Search for card" />
-                    <input type="submit" id="submit" />
-                </form>
-                <br />
-                <!--RETURNED DATA-->
-                <dl>
-                    <dt><h2>Mana Cost</h2></dt>
-                    <dd id="mana">loading...</dd>
+        <div id="wrapper">
+            <!--LEFT SIDE OF SCREEN-->
+            <div class="split left">
+                <h1 id="card-search">Search By Card Name</h1>
+                <div class="left-centered">
+                    <div id="card-image"></div>
+                    <!--INPUT CARD INFORMATION-->
+                    <form>
+                        <input type="text" id="search" placeholder="Search for card" />
+                        <input type="submit" id="submit" />
+                    </form>
+                    <br />
+                    <!--RETURNED DATA-->
+                    <dl>
+                        <dt><h2>Mana Cost</h2></dt>
+                        <dd id="mana">loading...</dd>
 
-                    <dt><h2>Card Type</h2></dt>
-                    <dd id="type">loading...</dd>
+                        <dt><h2>Card Type</h2></dt>
+                        <dd id="type">loading...</dd>
 
-                    <dt><h2>Card Rarity</h2></dt>
-                    <dd id="rarity">loading</dd>
+                        <dt><h2>Card Rarity</h2></dt>
+                        <dd id="rarity">loading</dd>
 
-                    <dt><h2>Rules Text</h2></dt>
-                    <dd id="card-text">loading...</dd>
+                        <dt><h2>Rules Text</h2></dt>
+                        <dd id="card-text">loading...</dd>
 
-                    <dt><h2>Power & Toughness</h2></dt>
-                    <dd id="power">loading...</dd>
-                </dl>
+                        <dt><h2>Power & Toughness</h2></dt>
+                        <dd id="power">loading...</dd>
+                    </dl>
+                </div>
             </div>
-        </div>
 
-        <br />
-        <br />
-        <!--RIGHT SIDE OF SCREEN-->
-        <div class="split right">
-            <h1 class="set-search"></h1>
-            <div class="right-centered">
-                <!--CAROUSEL-->
-                <div class="carousel-container">
-                    <!--PREVIOUS BUTTON-->
-                    <div class="carousel-button previous">
-                        <span class="lnr lnr-chevron-left"></span>
-                    </div>
-                    <!--CAROUSEL IMAGES-->
-                    <div class="carousel-images"></div>
-                    <!--NEXT BUTTON-->
-                    <div class="carousel-button next">
-                        <span class="lnr lnr-chevron-right"></span>
+            <br />
+            <br />
+            <!--RIGHT SIDE OF SCREEN-->
+            <div class="split right">
+                <h1 class="set-search"></h1>
+                <div class="right-centered">
+                    <!--CAROUSEL-->
+                    <div class="carousel-container">
+                        <!--PREVIOUS BUTTON-->
+                        <div class="carousel-button previous">
+                            <span class="lnr lnr-chevron-left"></span>
+                        </div>
+                        <!--CAROUSEL IMAGES-->
+                        <div class="carousel-images"></div>
+                        <!--NEXT BUTTON-->
+                        <div class="carousel-button next">
+                            <span class="lnr lnr-chevron-right"></span>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <div id="bottom"></div>
+            <div id="bottom"></div>
+        </div>
     </body>
 </html>
