@@ -17,6 +17,18 @@ body {
         height: 100%;
         background-image: url(./background_images/tez.jpg);
     }
+
+    #card-search {
+        text-align: center;
+    }
+
+    form {
+        text-align: center;
+    }
+
+    #submit {
+        background-color: rgb(246, 160, 71);
+    }
 }
 
 /* /////////////////////////////////////////////////// */
