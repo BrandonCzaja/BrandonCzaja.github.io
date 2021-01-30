@@ -1,4 +1,5 @@
 //////////////////    INDIVIDUAL CARDS    //////////////////////////////////
+
 $("form").on("submit", (event) => {
     event.preventDefault();
     const card = $("input").val();
@@ -8,18 +9,34 @@ $("form").on("submit", (event) => {
         //console.log(data);
         //Card Image
         $("#card-image").html(`<img src = "${data.cards[0].imageUrl}">`);
+
         //Mana Cost
-        $("#mana").html(data.cards[0].manaCost);
+        // if (data.cards[0].manaCost === undefined) {
+        //     $("#mana").text("This card has no cost");
+        // } else {
+        //     $("#mana").html(data.cards[0].manaCost);
+        // }
+        if (data.cards[0].manaCost === undefined) {
+            $("#mana").text("This card has no cost");
+        } else if (data.cards[0].manaCost != undefined) {
+            $("#mana").html(data.cards[0].manaCost);
+        } else {
+            $("#mana-cost").text == "Loading...";
+        }
+
         //Type
         $("#type").html(data.cards[0].type);
+
         //Rarity
         $("#rarity").html(data.cards[0].rarity);
+
         //Power & Toughness
         if (data.cards[0].power === undefined) {
             $("#power").text("This card is not a creature");
         } else {
             $("#power").html(data.cards[0].power + "/" + data.cards[0].toughness);
         }
+
         //Card Text
         if (data.cards[0].text === undefined) {
             $("#card-text").text("This card does not have any rules text");
