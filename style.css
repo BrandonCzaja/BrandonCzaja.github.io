@@ -7,15 +7,11 @@ body {
 /* MOBILE*/
 
 @media screen and (max-width: 767px) {
-    #wrapper {
-        position: fixed;
-        background-repeat: no-repeat;
-        background-size: cover;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
+    body {
         background-image: url(./background_images/tez.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
     }
 
     #card-search {
@@ -29,48 +25,49 @@ body {
     #submit {
         background-color: rgb(246, 160, 71);
     }
+
+    /*    SEARCH BY CARD          */
+    #card-image {
+        display: block;
+        margin-top: 10%;
+        margin-left: auto;
+        margin-right: auto;
+        width: 60%;
+    }
+
+    dl {
+        display: inline;
+    }
 }
 
 /* /////////////////////////////////////////////////// */
 /* For Tablet */
 @media screen and (min-width: 768px) and (max-width: 1279px) {
-    #wrapper {
-        position: fixed;
-        background-repeat: no-repeat;
-        background-size: cover;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
+    body {
         background-image: url(./background_images/ajani.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
     }
 }
 
 /* For Laptop */
 @media screen and (min-width: 1280px) and (max-width: 1919px) {
-    #wrapper {
-        position: fixed;
-        background-repeat: no-repeat;
-        background-size: cover;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
+    body {
         background-image: url(./background_images/nighthawk.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
     }
 }
 
 /* For Desktop */
 @media screen and (min-width: 1920px) {
-    #wrapper {
-        position: fixed;
-        background-repeat: no-repeat;
-        background-size: cover;
-        top: 0px;
-        left: 0px;
-        width: 100%;
-        height: 100%;
+    body {
         background-image: url(./background_images/khalni.jpg);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
     }
 }
 

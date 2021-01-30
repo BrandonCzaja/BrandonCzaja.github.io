@@ -1,38 +1,37 @@
 //////////////////    INDIVIDUAL CARDS    //////////////////////////////////
-// $("form").on("submit", (event) => {
-//     event.preventDefault();
-//     const card = $("input").val();
-//     $.ajax({
-//         url: `https://api.magicthegathering.io/v1/cards?name=${card}`,
-//     }).then((data) => {
-//         //console.log(data);
-//         //Card Image
-//         $("#card-image").html(`<img src = "${data.cards[0].imageUrl}">`);
-//         //Mana Cost
-//         $("#mana").html(data.cards[0].manaCost);
-//         //Type
-//         $("#type").html(data.cards[0].type);
-//         //Rarity
-//         $("#rarity").html(data.cards[0].rarity);
-//         //Power & Toughness
-//         if (data.cards[0].power === undefined) {
-//             $("#power").text("This card is not a creature");
-//         } else {
-//             $("#power").html(data.cards[0].power + "/" + data.cards[0].toughness);
-//         }
-//         //Card Text
-//         if (data.cards[0].text === undefined) {
-//             $("#card-text").text("This card does not have any rules text");
-//         } else {
-//             $("#card-text").html(data.cards[0].text);
-//         }
-//     });
-// }),
+$("form").on("submit", (event) => {
+    event.preventDefault();
+    const card = $("input").val();
+    $.ajax({
+        url: `https://api.magicthegathering.io/v1/cards?name=${card}`,
+    }).then((data) => {
+        //console.log(data);
+        //Card Image
+        $("#card-image").html(`<img src = "${data.cards[0].imageUrl}">`);
+        //Mana Cost
+        $("#mana").html(data.cards[0].manaCost);
+        //Type
+        $("#type").html(data.cards[0].type);
+        //Rarity
+        $("#rarity").html(data.cards[0].rarity);
+        //Power & Toughness
+        if (data.cards[0].power === undefined) {
+            $("#power").text("This card is not a creature");
+        } else {
+            $("#power").html(data.cards[0].power + "/" + data.cards[0].toughness);
+        }
+        //Card Text
+        if (data.cards[0].text === undefined) {
+            $("#card-text").text("This card does not have any rules text");
+        } else {
+            $("#card-text").html(data.cards[0].text);
+        }
+    });
+});
 // () => {
-//THIS DOESN'T WORK
+// THIS DOESN'T WORK
 // $('.split left').append($('<div>').text('ERROR: Please try another card name.'));
 // console.log('ERROR: Please try another card name.');
-//};
 
 ///////////////////////    Carousel    //////////////////////////////////
 //For CORS use jsonP
