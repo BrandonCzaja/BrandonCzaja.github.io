@@ -273,7 +273,7 @@ body {
 
     /*CAROUSEL BUTTONS*/
     .carousel-button {
-        font-size: large;
+        font-size: larger;
         position: relative;
         align-self: center;
         background: rgb(246, 160, 71);
