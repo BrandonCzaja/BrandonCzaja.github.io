@@ -84,7 +84,7 @@ body {
         font-size: large;
         position: relative;
         align-self: center;
-        background: lightgray;
+        background: rgb(246, 160, 71);
         color: black;
         padding: 4px;
         margin: 5%;
@@ -176,7 +176,7 @@ body {
         font-size: large;
         position: relative;
         align-self: center;
-        background: lightgray;
+        background: rgb(246, 160, 71);
         color: black;
         padding: 8px;
         margin: 5%;
@@ -211,20 +211,29 @@ body {
     }
 
     /*    SEARCH BY CARD          */
-    #card-image {
-        display: block;
+    #card-container {
         text-align: center;
-        width: 100%;
+    }
+
+    #card-image {
+        display: inline-block;
     }
 
     dl {
         display: inline;
     }
 
+    /*Card Hover*/
+
+    #card-image:hover {
+        transform: scale(1.5);
+        top: 20%;
+    }
+
     /* SET SEARCH */
     #set {
         text-align: center;
-        margin-bottom: 15%;
+        margin-bottom: 5%;
     }
 
     .set-search {
@@ -236,8 +245,8 @@ body {
     /*CAROUSEL*/
     .carousel-container {
         display: flex;
-        justify-content: space-around;
-        margin-bottom: 30%;
+        justify-content: center;
+        margin-bottom: 20%;
     }
 
     /*Image Container*/
@@ -267,14 +276,14 @@ body {
         font-size: large;
         position: relative;
         align-self: center;
-        background: lightgray;
+        background: rgb(246, 160, 71);
         color: black;
         padding: 4px;
         margin: 5%;
-        margin-top: 20%;
+        margin-top: 15%;
         border-radius: 50%;
         text-align: center;
-        box-shadow: 2px 2px darkgrey;
+        box-shadow: 2px 2px black;
         text-shadow: none;
     }
 }
