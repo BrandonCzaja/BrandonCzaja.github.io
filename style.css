@@ -146,7 +146,7 @@ body {
     .carousel-container {
         display: flex;
         justify-content: space-around;
-        margin-bottom: 60%;
+        margin-bottom: 20%;
     }
 
     /*Image Container*/
@@ -178,7 +178,7 @@ body {
         align-self: center;
         background: lightgray;
         color: black;
-        padding: 4px;
+        padding: 8px;
         margin: 5%;
         margin-top: 20%;
         border-radius: 50%;
