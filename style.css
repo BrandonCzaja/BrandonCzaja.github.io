@@ -305,6 +305,7 @@ body {
     #right {
         width: 50%;
         float: right;
+        margin-top: -1%;
     }
 
     #card-search {
@@ -360,12 +361,12 @@ body {
 
     /*Image Container*/
     .carousel-images {
-        width: 10%;
+        width: 15%;
         height: auto;
         border-radius: 10px;
-        margin-top: 10%;
-        padding: 10px;
-        border: 5px solid goldenrod;
+        margin-top: 5%;
+        padding: 20px;
+        border: 10px solid goldenrod;
         background-color: white;
     }
 
@@ -383,18 +384,19 @@ body {
 
     /*CAROUSEL BUTTONS*/
     .carousel-button {
-        font-size: larger;
+        font-size: xx-large;
         position: relative;
         align-self: center;
         background: rgb(246, 160, 71);
         color: black;
-        padding: 4px;
+        padding: 20px;
         margin: 5%;
-        margin-top: 15%;
+        margin-top: 10%;
         border-radius: 50%;
         text-align: center;
-        box-shadow: 2px 2px black;
+        box-shadow: 5px 5px black;
         text-shadow: none;
+        cursor: pointer;
     }
 }
 
