@@ -1,16 +1,20 @@
 //////////////////    INDIVIDUAL CARDS    //////////////////////////////////
-
+const clearResults = () => {
+    $("card-info").children().remove();
+};
 $("form").on("submit", (event) => {
+    clearResults();
     event.preventDefault();
     const card = $("input").val();
     $.ajax({
         url: `https://api.magicthegathering.io/v1/cards?name=${card}`,
     }).then((data) => {
+        // $("#card-info").html("");
         //Card Image
         $("#card-image").html(`<img src = "${data.cards[0].imageUrl}">`);
 
         //Mana Cost
-        $("#mana-cost").append("<p>Mana Cost</p>");
+        $("#mana-cost").text("Mana Cost");
         if (data.cards[0].manaCost === undefined) {
             $("#mana").text("This card has no cost");
         } else {
@@ -18,15 +22,15 @@ $("form").on("submit", (event) => {
         }
 
         //Type
-        $("#card-type").append("<p>Card Type</p>");
+        $("#card-type").text("Card Type");
         $("#type").html(data.cards[0].type);
 
         //Rarity
-        $("#card-rarity").append("<p>Card Rarity</p>");
+        $("#card-rarity").text("Card Rarity");
         $("#rarity").html(data.cards[0].rarity);
 
         //Card Text
-        $("#card-rules").append("<p>Rules Text</p>");
+        $("#card-rules").text("Rules Text");
         if (data.cards[0].text === undefined) {
             $("#card-text").text("This card does not have any rules text");
         } else {
@@ -34,7 +38,7 @@ $("form").on("submit", (event) => {
         }
 
         //Power & Toughness
-        $("#card-pt").append("<p>Power & Toughness</p>");
+        $("#card-pt").text("Power & Toughness");
         if (data.cards[0].power === undefined) {
             $("#power").text("This card is not a creature");
         } else {
