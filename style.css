@@ -299,19 +299,17 @@ body {
 
     #left {
         width: 50%;
-        display: inline-block;
         float: left;
     }
 
     #right {
         width: 50%;
-        display: inline-block;
         float: right;
     }
 
     #card-search {
         font-size: 700%;
-        text-align: left;
+        text-align: center;
         margin-left: 15%;
         margin-top: 5%;
     }
@@ -323,6 +321,7 @@ body {
 
     #submit {
         background-color: rgb(246, 160, 71);
+        cursor: pointer;
     }
 
     /*    SEARCH BY CARD          */
