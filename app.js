@@ -5,7 +5,8 @@ $("form").on("submit", (event) => {
     $.ajax({
         url: `https://api.magicthegathering.io/v1/cards?name=${card}`,
     }).then((data) => {
-        // $("#card-info").html("");
+        // I NEED A CASE FOR IF THE CARD DOESN'T EXIST
+
         //Card Image
         $("#card-image").html(`<img src = "${data.cards[0].imageUrl}">`);
 
@@ -42,10 +43,6 @@ $("form").on("submit", (event) => {
         }
     });
 });
-// () => {
-// THIS DOESN'T WORK
-// $('.split left').append($('<div>').text('ERROR: Please try another card name.'));
-// console.log('ERROR: Please try another card name.');
 
 ///////////////////////    Carousel    //////////////////////////////////
 //For CORS use jsonP
@@ -58,9 +55,12 @@ $.ajax({
     contentType: "application/json",
     crossDomain: true,
 }).then((data) => {
+    // let reversedData = data.data.reverse();
     let highestIndex = data.data.length - 1;
+    // let setName = data.data[highestIndex].name;
     let setName = data.data[highestIndex].name;
     let currentImageIndex = 0;
+    console.log(data.data[highestIndex].name);
 
     //This makes the carousel
     for (let i = highestIndex; i >= 0; i--) {
@@ -68,7 +68,6 @@ $.ajax({
         $("<img class = SetSymbols>")
             .attr({ src: data.data[i].icon_svg_uri, class: `${i}` })
             .appendTo($(".carousel-images"));
-        // $(".set-search").text(setName);
     }
     $(".set-search").text(setName);
     ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -86,6 +85,7 @@ $.ajax({
 
         $(".carousel-images").children().eq(currentImageIndex).css("display", "block");
         $(".set-search").text(data.data[currentImageIndex].name);
+        // $(".set-search").text(reversedData[currentImageIndex].name);
     });
 
     //Previous Buttons
