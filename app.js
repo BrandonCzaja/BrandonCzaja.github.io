@@ -1,9 +1,5 @@
 //////////////////    INDIVIDUAL CARDS    //////////////////////////////////
-const clearResults = () => {
-    $("card-info").children().remove();
-};
 $("form").on("submit", (event) => {
-    clearResults();
     event.preventDefault();
     const card = $("input").val();
     $.ajax({
