@@ -310,8 +310,6 @@ body {
     #card-search {
         font-size: 700%;
         text-align: center;
-        margin-left: 15%;
-        margin-top: 5%;
     }
 
     form {
@@ -325,41 +323,32 @@ body {
     }
 
     /*    SEARCH BY CARD          */
-    #card-container {
-        text-align: left;
-        width: 50%;
-    }
 
     #card-image {
+        position: relative;
         display: inline-block;
+        margin-left: 42%;
     }
-
-    dl {
-        display: inline;
-    }
-
-    #card-info {
-        margin-left: 10%;
-        font-size: x-large;
-    }
-
-    /*Card Hover*/
 
     #card-image:hover {
         transform: scale(2.5);
-        top: 20%;
+        left: 25%;
+    }
+
+    #card-info {
+        margin-left: 5%;
+        font-size: x-large;
+        width: 30%;
     }
 
     /* SET SEARCH */
     #set {
         text-align: center;
         font-size: 700%;
-        margin-bottom: 5%;
     }
 
     .set-search {
-        font-size: 20px;
-        width: 100%;
+        font-size: xx-large;
         text-align: center;
     }
 
@@ -367,12 +356,12 @@ body {
     .carousel-container {
         display: flex;
         justify-content: center;
-        margin-bottom: 20%;
     }
 
     /*Image Container*/
     .carousel-images {
-        width: auto;
+        width: 10%;
+        height: auto;
         border-radius: 10px;
         margin-top: 10%;
         padding: 10px;
