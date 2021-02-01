@@ -18,43 +18,42 @@
     <body>
         <div id="wrapper">
             <!--LEFT SIDE OF SCREEN-->
-            <div>
-                <h1 id="card-search">Card Search</h1>
-                <div>
-                    <!--INPUT CARD INFORMATION-->
+            <div id="left">
+                <section id="card-container">
+                    <h1 id="card-search">Card Search</h1>
+                    <div id="card-image"></div>
                     <form>
                         <input type="text" id="search" placeholder="Search" />
                         <input type="submit" id="submit" value="Search" />
                     </form>
-                    <section id="card-container">
-                        <div id="card-image"></div>
-                    </section>
 
                     <br />
                     <!--RETURNED DATA-->
-                    <dl>
-                        <dt><h2>Mana Cost</h2></dt>
-                        <dd id="mana"></dd>
+                    <div id="card-info">
+                        <dl>
+                            <dt><h2>Mana Cost</h2></dt>
+                            <dd id="mana"></dd>
 
-                        <dt><h2>Card Type</h2></dt>
-                        <dd id="type"></dd>
+                            <dt><h2>Card Type</h2></dt>
+                            <dd id="type"></dd>
 
-                        <dt><h2>Card Rarity</h2></dt>
-                        <dd id="rarity"></dd>
+                            <dt><h2>Card Rarity</h2></dt>
+                            <dd id="rarity"></dd>
 
-                        <dt><h2>Rules Text</h2></dt>
-                        <dd id="card-text"></dd>
+                            <dt><h2>Rules Text</h2></dt>
+                            <dd id="card-text"></dd>
 
-                        <dt><h2>Power & Toughness</h2></dt>
-                        <dd id="power"></dd>
-                    </dl>
-                </div>
+                            <dt><h2>Power & Toughness</h2></dt>
+                            <dd id="power"></dd>
+                        </dl>
+                    </div>
+                </section>
             </div>
 
             <br />
             <br />
             <!--RIGHT SIDE OF SCREEN-->
-            <div>
+            <div id="right">
                 <h1 id="set">Search By Set</h1>
                 <h1 class="set-search"></h1>
                 <div class="right-centered">
