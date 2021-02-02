@@ -8,23 +8,21 @@ The page is split into two sections, left side and right side. On the left side,
 
 Users will be able to click on the set symbol and see the Card Image Gallery for the set.
 
-Additional styling will be added to make the site responsive to multiple screen sizes
-
 # Tech used:
 
-- HTML
-- CSS
-- JavaScript
-- jQuery
-- AJAX Requests
-- GitHub
-- Vercel
+-   HTML
+-   CSS
+-   JavaScript
+-   jQuery
+-   AJAX Requests
+-   GitHub
+-   Vercel
 
 # APIs used:
 
-- Magic: The Gathering API - https://docs.magicthegathering.io/
-- Scryfall - https://scryfall.com/docs/api
+-   Magic: The Gathering API - https://docs.magicthegathering.io/
+-   Scryfall - https://scryfall.com/docs/api
 
 # Live Site:
 
-- https://magic-the-gathering-search.vercel.app/
+-   https://magic-the-gathering-search.vercel.app/
