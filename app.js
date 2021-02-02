@@ -104,7 +104,7 @@ $.ajax({
         }
 
         $(".carousel-images").children().eq(currentImageIndex).css("display", "block");
-        $(".set-search").text(data.data[currentImageIndex].name);
+        $(".set-search").text(orderedSets[currentImageIndex]);
     });
 });
 
