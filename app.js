@@ -55,23 +55,28 @@ $.ajax({
     contentType: "application/json",
     crossDomain: true,
 }).then((data) => {
-    // let reversedData = data.data.reverse();
     let highestIndex = data.data.length - 1;
-    // let setName = data.data[highestIndex].name;
+    // setName only gives me Alpha, the rest come from buttons
     let setName = data.data[highestIndex].name;
     let currentImageIndex = 0;
+    const orderedSets = [];
     console.log(data.data[highestIndex].name);
 
     //This makes the carousel
     for (let i = highestIndex; i >= 0; i--) {
+        orderedSets.push(data.data[i].name);
         // Set Symbol
         $("<img class = SetSymbols>")
             .attr({ src: data.data[i].icon_svg_uri, class: `${i}` })
             .appendTo($(".carousel-images"));
     }
+    console.log(orderedSets);
+    // Only used for Alpha, rest come from buttons
     $(".set-search").text(setName);
-    ////////////////////////////////////////////////////////////////////////////////////////////////
-    //Next Button
+
+    ////////////////
+    // Next Button
+    ////////////////
     $(".next").on("click", () => {
         $(".carousel-images").children().eq(currentImageIndex).css("display", "none");
 
@@ -84,7 +89,7 @@ $.ajax({
         }
 
         $(".carousel-images").children().eq(currentImageIndex).css("display", "block");
-        $(".set-search").text(data.data[currentImageIndex].name);
+        $(".set-search").text(orderedSets[currentImageIndex]);
         // $(".set-search").text(reversedData[currentImageIndex].name);
     });
 
