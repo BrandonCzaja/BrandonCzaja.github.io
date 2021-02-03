@@ -112,35 +112,18 @@ $.ajax({
 // Card Image Gallery
 ///////////////////////
 
-// https://scryfall.com/docs/api/sets/all
-// From the above url grab the scryfall_uri : "scryfall_uri": "https://scryfall.com/sets/lea",
+// Need to create a global variable of the ordered sets
 
-// I need to make the icons buttons and give them on click events that run the ajax call
+// https://scryfall.com/sets/${iconImage}
+// $(".carousel-images").on("click", (event) => {
+//     $.ajax({
+//         url: `https://api.scryfall.com/sets/`,
+//         dataType: "json",
+//         type: "GET",
+//         contentType: "application/json",
+//         crossDomain: true,
+//     }).then((data) => {
+//         const setImageArray = []
 
-
-$.ajax({
-    //URL FOR SET NAMES AND ICONS
-    url: `https://api.scryfall.com/sets/${set}`,
-    dataType: "json",
-    type: "GET",
-    contentType: "application/json",
-    crossDomain: true,
-}).then((data) => {
-    let highestIndex = data.data.length - 1;
-    // setName only gives me Alpha, the rest come from buttons
-    let setName = data.data[highestIndex].name;
-    let currentImageIndex = 0;
-    const orderedSets = [];
-    console.log(data.data[highestIndex].name);
-
-    //This makes the carousel
-    for (let i = highestIndex; i >= 0; i--) {
-        orderedSets.push(data.data[i].name);
-        // Set Symbol
-        $("<img class = SetSymbols>")
-            .attr({ src: data.data[i].icon_svg_uri, class: `${i}` })
-            .appendTo($(".carousel-images"));
-    }
-    console.log(orderedSets);
-    // Only used for Alpha, rest come from buttons
-    $(".set-search").text(setName);
+//     });
+// });
