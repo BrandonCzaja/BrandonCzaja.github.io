@@ -79,8 +79,6 @@ $.ajax({
     $(".next").on("click", () => {
         $(".carousel-images").children().eq(currentImageIndex).css("display", "none");
 
-        // Try using array.reverse => sets = data.data.reverse()
-        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/reverse
         if (currentImageIndex < highestIndex) {
             currentImageIndex++;
         } else {
@@ -105,32 +103,19 @@ $.ajax({
         $(".carousel-images").children().eq(currentImageIndex).css("display", "block");
         $(".set-search").text(orderedSets[currentImageIndex]);
     });
-});
 
-////////////////////////
-// Card Image Gallery
-///////////////////////
+    ////////////////////////
+    // Card Image Gallery
+    ///////////////////////
 
-$(".carousel-images").click(() => {
-    let currentGalleryIndex = 0;
-    let orderedGalleryArray = [];
-
-    $.ajax({
-        url: `https://api.scryfall.com/sets/`,
-        dataType: "json",
-        type: "GET",
-        contentType: "application/json",
-        crossDomain: true,
-    }).then((data) => {
-        let setGalleries = data.data.length - 1;
-        let galleryName = data.data[setGalleries].name;
-
-        for (let i = setGalleries; i >= 0; i--) {
+    $(".carousel-images").click(() => {
+        let orderedGalleryArray = [];
+        for (let i = highestIndex; i >= 0; i--) {
+            // Correct order of sets with the gallery uri
             orderedGalleryArray.push(data.data[i].scryfall_uri);
         }
+
         console.log(orderedGalleryArray);
-        // orderedGalleryArray = [data.data[0]];
-        // console.log(orderedGalleryArray);
     });
 });
 
