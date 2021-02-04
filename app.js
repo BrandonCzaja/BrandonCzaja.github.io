@@ -124,9 +124,22 @@ $(".carousel-images").click(() => {
     }).then((data) => {
         let setGalleries = data.data.length - 1;
         let galleryName = data.data[setGalleries].name;
-        orderedGalleryArray = [data.data[0]];
+
+        for (let i = setGalleries; i >= 0; i--) {
+            orderedGalleryArray.push(data.data[i].scryfall_uri);
+        }
         console.log(orderedGalleryArray);
+        // orderedGalleryArray = [data.data[0]];
+        // console.log(orderedGalleryArray);
     });
 });
 
 // I need to make sure that I am linking only the current image to the correct card gallery. Right now I am pulling in all sets
+
+// for (let i = highestIndex; i >= 0; i--) {
+//     orderedSets.push(data.data[i].name);
+//     // Set Symbol
+//     $("<img class = SetSymbols>")
+//         .attr({ src: data.data[i].icon_svg_uri, class: `${i}` })
+//         .appendTo($(".carousel-images"));
+// }
