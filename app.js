@@ -60,7 +60,6 @@ $.ajax({
     let setName = data.data[highestIndex].name;
     let currentImageIndex = 0;
     const orderedSets = [];
-    console.log(data.data[highestIndex].name);
 
     //This makes the carousel
     for (let i = highestIndex; i >= 0; i--) {
@@ -70,7 +69,7 @@ $.ajax({
             .attr({ src: data.data[i].icon_svg_uri, class: `${i}` })
             .appendTo($(".carousel-images"));
     }
-    console.log(orderedSets);
+    // console.log(orderedSets);
     // Only used for Alpha, rest come from buttons
     $(".set-search").text(setName);
 
@@ -112,18 +111,15 @@ $.ajax({
 // Card Image Gallery
 ///////////////////////
 
-// Need to create a global variable of the ordered sets
-
-// https://scryfall.com/sets/${iconImage}
-// $(".carousel-images").on("click", (event) => {
-//     $.ajax({
-//         url: `https://api.scryfall.com/sets/`,
-//         dataType: "json",
-//         type: "GET",
-//         contentType: "application/json",
-//         crossDomain: true,
-//     }).then((data) => {
-//         const setImageArray = []
-
-//     });
-// });
+$(".carousel-images").click(() => {
+    $.ajax({
+        url: `https://api.scryfall.com/sets/`,
+        dataType: "json",
+        type: "GET",
+        contentType: "application/json",
+        crossDomain: true,
+    }).then((data) => {
+        const setGalleryArray = [data.data];
+        console.log(setGalleryArray);
+    });
+});
