@@ -112,6 +112,9 @@ $.ajax({
 ///////////////////////
 
 $(".carousel-images").click(() => {
+    let currentGalleryIndex = 0;
+    let orderedGalleryArray = [];
+
     $.ajax({
         url: `https://api.scryfall.com/sets/`,
         dataType: "json",
@@ -119,8 +122,10 @@ $(".carousel-images").click(() => {
         contentType: "application/json",
         crossDomain: true,
     }).then((data) => {
-        const setGalleryArray = [data.data];
-        console.log(setGalleryArray);
+        let setGalleries = data.data.length - 1;
+        let galleryName = data.data[setGalleries].name;
+        orderedGalleryArray = [data.data[0]];
+        console.log(orderedGalleryArray);
     });
 });
 
