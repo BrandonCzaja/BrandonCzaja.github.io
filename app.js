@@ -123,3 +123,5 @@ $(".carousel-images").click(() => {
         console.log(setGalleryArray);
     });
 });
+
+// I need to make sure that I am linking only the current image to the correct card gallery. Right now I am pulling in all sets
