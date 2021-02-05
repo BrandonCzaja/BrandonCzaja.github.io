@@ -108,43 +108,15 @@ $.ajax({
     // Card Image Gallery
     ///////////////////////
 
-    // OLD CODE THAT SUPPOSEDLY WORKED
-
-    // const $img = $('<img>').attr('title' , 'aer')
-    // $('.carousel-images').on('click' , (event) =>{
-    //     $.ajax({
-    //         //url: `https://api.scryfall.com/cards/search?order=set&q=e%3A${$img}&unique=prints`
-    //         url: `https://api.scryfall.com/cards/search?order=set&q=e%3Aaer&unique=prints`
-    //     }).then (
-    //         (data) => {
-
-    //             //console.log(data.data)
-    //             console.log(data);
-    //            for(let i = 0; i < data.data.length; i++) {
-    //             $('<img>').attr('src', data.data[i].image_uris.normal).appendTo($('#bottom'));
-    //            }
-    //         }
-    //     )
-    // })
-
     $(".carousel-images").click((event) => {
         let orderedGalleryArray = [];
         for (let i = highestIndex; i >= 0; i--) {
             // Correct order of sets with the gallery uri
-            orderedGalleryArray.push(data.data[i].scryfall_uri);
-            $("<img>").attr("src", orderedGalleryArray[currentImageIndex].scryfall_uri).append($("#bottom"));
+            // I might have to make an ajax call to the search_uri
+            orderedGalleryArray.push(data.data[i].search_uri);
+            // $("<img>").attr("src", orderedGalleryArray[currentImageIndex].scryfall_uri).append($("#bottom"));
         }
 
-        // console.log(orderedGalleryArray);
+        console.log(orderedGalleryArray[0]);
     });
 });
-
-// I need to make sure that I am linking only the current image to the correct card gallery. Right now I am pulling in all sets
-
-// for (let i = highestIndex; i >= 0; i--) {
-//     orderedSets.push(data.data[i].name);
-//     // Set Symbol
-//     $("<img class = SetSymbols>")
-//         .attr({ src: data.data[i].icon_svg_uri, class: `${i}` })
-//         .appendTo($(".carousel-images"));
-// }
