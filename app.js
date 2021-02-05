@@ -114,7 +114,7 @@ $.ajax({
             // Correct order of sets with the gallery uri
             orderedGalleryArray.push(data.data[i].scryfall_uri);
         }
-
+        $(".gallery").append(orderedGalleryArray[currentImageIndex]);
         console.log(orderedGalleryArray);
     });
 });
@@ -128,3 +128,20 @@ $.ajax({
 //         .attr({ src: data.data[i].icon_svg_uri, class: `${i}` })
 //         .appendTo($(".carousel-images"));
 // }
+
+// const $img = $('<img>').attr('title' , 'aer')
+// $('.carousel-images').on('click' , (event) =>{
+//     $.ajax({
+//         //url: `https://api.scryfall.com/cards/search?order=set&q=e%3A${$img}&unique=prints`
+//         url: `https://api.scryfall.com/cards/search?order=set&q=e%3Aaer&unique=prints`
+//     }).then (
+//         (data) => {
+
+//             //console.log(data.data)
+//             console.log(data);
+//            for(let i = 0; i < data.data.length; i++) {
+//             $('<img>').attr('src', data.data[i].image_uris.normal).appendTo($('#bottom'));
+//            }
+//         }
+//     )
+// })
