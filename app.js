@@ -109,14 +109,13 @@ $.ajax({
     ///////////////////////
 
     $(".carousel-images").click((event) => {
-        let orderedGalleryArray = [];
-        for (let i = highestIndex; i >= 0; i--) {
-            // Correct order of sets with the gallery uri
-            // I might have to make an ajax call to the search_uri
-            orderedGalleryArray.push(data.data[i].search_uri);
-            // $("<img>").attr("src", orderedGalleryArray[currentImageIndex].scryfall_uri).append($("#bottom"));
-        }
-
-        console.log(orderedGalleryArray[0]);
+        // I can get the specific set symbol but I need the set code
+        let cardCode = $(".carousel-images").children().eq(currentImageIndex);
+        console.log(cardCode);
+        $.ajax({
+            url: `https://api.scryfall.com/cards/search?order=set&q=e%3A${cardCode}&unique=prints`,
+        }).then((data) => {
+            $(".gallery").append(data.data.image_uris.normal);
+        });
     });
 });
