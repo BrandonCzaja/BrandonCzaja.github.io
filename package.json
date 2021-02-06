@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "dependencies": {
+    "cors": "^2.8.5",
     "jquery": "^3.5.1",
     "mtgsdk": "^0.4.3"
   },

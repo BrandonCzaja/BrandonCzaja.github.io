@@ -118,22 +118,15 @@ $.ajax({
 // url: `https://scryfall.com/sets/${setCodes}`,
 
 $(".carousel-images").click((event) => {
-    const setUrl = `https://scryfall.com/sets/lea`;
-    const promise = fetch(setUrl, {
-        mode: "no-cors",
-        headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Access-Control-Allow-Origin": "*",
-        },
-        type: "GET",
+    $.ajax({
+        url: `https://api.scryfall.com/sets/${setGallery}`,
         dataType: "json",
+        type: "GET",
         contentType: "application/json",
         crossDomain: true,
-    })
-        .then((data) => {
-            console.log("hello");
-            // console.log(data.data[currentImageIndex].image_uris.normal);
-            // $(".gallery").append($("<img/>").attr("src", data.data[0].image_uris.png));
-        })
-        .catch(() => console.log("Error from CORS / CORB"));
+    }).then((data) => {
+        console.log("hello");
+        // console.log(data.data[0].image_uris.normal);
+        // $(".gallery").append($("<img/>").attr("src", data.data[0].image_uris.png));
+    });
 });
