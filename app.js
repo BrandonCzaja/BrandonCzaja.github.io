@@ -55,15 +55,17 @@ $.ajax({
     contentType: "application/json",
     crossDomain: true,
 }).then((data) => {
+    // Creates a iterable number to associate the sets with
     let highestIndex = data.data.length - 1;
+    let currentImageIndex = 0;
+
+    // Gives me all the setCodes so I can use them for gallery images
     let setCodes = [];
     for (let i = highestIndex; i >= 0; i--) {
         setCodes.push(data.data[i].code);
     }
 
-    // setName only gives me Alpha, the rest come from buttons
-    let setName = data.data[highestIndex].name;
-    let currentImageIndex = 0;
+    // Puts the sets in the proper order. The API has them reversed
     const orderedSets = [];
 
     //This makes the carousel
@@ -74,8 +76,9 @@ $.ajax({
             .attr({ src: data.data[i].icon_svg_uri, class: `${i}` })
             .appendTo($(".carousel-images"));
     }
-    // console.log(orderedSets);
+
     // Only used for Alpha, rest come from buttons
+    let setName = data.data[highestIndex].name;
     $(".set-search").text(setName);
 
     ////////////////
@@ -89,13 +92,18 @@ $.ajax({
         } else {
             currentImageIndex = 0;
         }
-
+        console.log(setCodes[currentImageIndex]);
+        console.log(currentImageIndex);
+        // console.log(setCodes);
         $(".carousel-images").children().eq(currentImageIndex).css("display", "block");
         $(".set-search").text(orderedSets[currentImageIndex]);
-        // $(".set-search").text(reversedData[currentImageIndex].name);
     });
 
-    //Previous Buttons
+    // I WONDER IF I COULD SET THE SET CODE TO THE CURRENT IMAGE INDEX HERE
+
+    /////////////////////
+    // Previous Buttons
+    /////////////////////
     $(".previous").on("click", () => {
         $(".carousel-images").children().eq(currentImageIndex).css("display", "none");
 
@@ -108,25 +116,25 @@ $.ajax({
         $(".carousel-images").children().eq(currentImageIndex).css("display", "block");
         $(".set-search").text(orderedSets[currentImageIndex]);
     });
-});
 
-////////////////////////
-// Card Image Gallery
-///////////////////////
+    // I WONDER IF I COULD SET THE SET CODE TO THE CURRENT IMAGE INDEX HERE
 
-// I need it to only grab the current set Code not all of them
-// url: `https://scryfall.com/sets/${setCodes}`,
+    ////////////////////////
+    // Card Image Gallery
+    ///////////////////////
 
-$(".carousel-images").click((event) => {
-    $.ajax({
-        url: `https://api.scryfall.com/sets/${setGallery}`,
-        dataType: "json",
-        type: "GET",
-        contentType: "application/json",
-        crossDomain: true,
-    }).then((data) => {
-        console.log("hello");
-        // console.log(data.data[0].image_uris.normal);
-        // $(".gallery").append($("<img/>").attr("src", data.data[0].image_uris.png));
+    // ${setGallery}
+    $(".carousel-images").click((event) => {
+        $.ajax({
+            url: `https://api.scryfall.com/sets/`,
+            dataType: "json",
+            type: "GET",
+            contentType: "application/json",
+            crossDomain: true,
+        }).then((data) => {
+            console.log("hello");
+            // console.log(data.data[0].image_uris.normal);
+            // $(".gallery").append($("<img/>").attr("src", data.data[0].image_uris.png));
+        });
     });
 });
