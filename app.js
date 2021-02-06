@@ -45,7 +45,6 @@ $("form").on("submit", (event) => {
 });
 
 ///////////////////////    Carousel    //////////////////////////////////
-//For CORS use jsonP
 
 $.ajax({
     //URL FOR SET NAMES AND ICONS
@@ -92,14 +91,18 @@ $.ajax({
         } else {
             currentImageIndex = 0;
         }
+
+        $(".carousel-images").click((event) => {
+            $(".gallery").append($("<img/>").attr("src", `https://scryfall.com/sets/${setCodes[currentImageIndex]}`));
+        });
         console.log(setCodes[currentImageIndex]);
         console.log(currentImageIndex);
-        // console.log(setCodes);
+
         $(".carousel-images").children().eq(currentImageIndex).css("display", "block");
         $(".set-search").text(orderedSets[currentImageIndex]);
     });
 
-    // I WONDER IF I COULD SET THE SET CODE TO THE CURRENT IMAGE INDEX HERE
+    // I MIGHT STILL BE ABLE TO GET THIS TO WORK. IF I JUST SET THE GALLERY AND CLICK FUNCTION HERE IT MIGHT WORK
 
     /////////////////////
     // Previous Buttons
@@ -112,6 +115,12 @@ $.ajax({
         } else {
             currentImageIndex = highestIndex;
         }
+
+        $(".carousel-images").click((event) => {
+            $(".gallery").append($("<img/>").attr("src", `https://scryfall.com/sets/${setCodes[currentImageIndex]}`));
+        });
+        console.log(setCodes[currentImageIndex]);
+        console.log(currentImageIndex);
 
         $(".carousel-images").children().eq(currentImageIndex).css("display", "block");
         $(".set-search").text(orderedSets[currentImageIndex]);
