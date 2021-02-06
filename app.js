@@ -56,6 +56,11 @@ $.ajax({
     crossDomain: true,
 }).then((data) => {
     let highestIndex = data.data.length - 1;
+    let setCodes = [];
+    for (let i = highestIndex; i >= 0; i--) {
+        setCodes.push(data.data[i].code);
+    }
+
     // setName only gives me Alpha, the rest come from buttons
     let setName = data.data[highestIndex].name;
     let currentImageIndex = 0;
@@ -103,19 +108,32 @@ $.ajax({
         $(".carousel-images").children().eq(currentImageIndex).css("display", "block");
         $(".set-search").text(orderedSets[currentImageIndex]);
     });
+});
 
-    ////////////////////////
-    // Card Image Gallery
-    ///////////////////////
+////////////////////////
+// Card Image Gallery
+///////////////////////
 
-    $(".carousel-images").click((event) => {
-        // I can get the specific set symbol but I need the set code
-        let cardCode = $(".carousel-images").children().eq(currentImageIndex);
-        console.log(cardCode);
-        $.ajax({
-            url: `https://api.scryfall.com/cards/search?order=set&q=e%3A${cardCode}&unique=prints`,
-        }).then((data) => {
-            $(".gallery").append(data.data.image_uris.normal);
-        });
-    });
+// I need it to only grab the current set Code not all of them
+// url: `https://scryfall.com/sets/${setCodes}`,
+
+$(".carousel-images").click((event) => {
+    const setUrl = `https://scryfall.com/sets/lea`;
+    const promise = fetch(setUrl, {
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Access-Control-Allow-Origin": "*",
+        },
+        type: "GET",
+        dataType: "json",
+        contentType: "application/json",
+        crossDomain: true,
+    })
+        .then((data) => {
+            console.log("hello");
+            // console.log(data.data[currentImageIndex].image_uris.normal);
+            // $(".gallery").append($("<img/>").attr("src", data.data[0].image_uris.png));
+        })
+        .catch(() => console.log("Error from CORS / CORB"));
 });
