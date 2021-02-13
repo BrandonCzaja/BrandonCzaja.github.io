@@ -138,14 +138,14 @@ $.ajax({
     $(".carousel-images").click((event) => {
         $.ajax({
             url: `https://api.scryfall.com/sets/`,
-            dataType: "json",
-            type: "GET",
-            contentType: "application/json",
-            crossDomain: true,
         }).then((data) => {
-            console.log("hello");
-            // console.log(data.data[0].image_uris.normal);
-            // $(".gallery").append($("<img/>").attr("src", data.data[0].image_uris.png));
+            console.log(data);
+            const galleryData = [];
+            for (let i = 0; i < data.data.length; i++) {
+                galleryData.push(data.data[i].scryfall_uri);
+            }
+            $("<img>").attr("src", galleryData[0].scryfall_uri).appendTo($("#bottom"));
+            console.log(galleryData[0]);
         });
     });
 });
