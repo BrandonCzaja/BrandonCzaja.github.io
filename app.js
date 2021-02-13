@@ -148,7 +148,7 @@ $.ajax({
             // for (let i = 0; i < data.data.length; i++) {
             //     galleryData.push(data.data[i]);
             // }
-            $("#bottom").prepend(`<img src=${data.data[0].image_uris.small}/>`);
+            $("#bottom").prepend(`<img src=${data.data[0].image_uris.border_crop}/>`);
         });
     });
 });
