@@ -137,15 +137,18 @@ $.ajax({
     // ${setGallery}
     $(".carousel-images").click((event) => {
         $.ajax({
-            url: `https://api.scryfall.com/sets/`,
+            // url: `https://api.scryfall.com/sets/`,
+            url: `https://api.scryfall.com/cards/search?order=set&q=e%3Atsr&unique=prints`,
+            dataType: "json",
         }).then((data) => {
-            const galleryData = [];
-            for (let i = 0; i < data.data.length; i++) {
-                galleryData.push(data.data[i]);
-            }
-            // This link goes to the json data: Keep
-            console.log(galleryData[0].search_uri);
-            // $("<img>").attr("src", galleryData[0]).appendTo($("#bottom"));
+            console.log(data);
+            console.log(data.data);
+            console.log(data.data[0]);
+            // const galleryData = [];
+            // for (let i = 0; i < data.data.length; i++) {
+            //     galleryData.push(data.data[i]);
+            // }
+            $("#bottom").prepend(`<img src=${data.data[0].image_uris.small}/>`);
         });
     });
 });
