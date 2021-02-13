@@ -139,13 +139,13 @@ $.ajax({
         $.ajax({
             url: `https://api.scryfall.com/sets/`,
         }).then((data) => {
-            console.log(data);
             const galleryData = [];
             for (let i = 0; i < data.data.length; i++) {
-                galleryData.push(data.data[i].scryfall_uri);
+                galleryData.push(data.data[i]);
             }
-            $("<img>").attr("src", galleryData[0].scryfall_uri).appendTo($("#bottom"));
-            console.log(galleryData[0]);
+            // This link goes to the json data: Keep
+            console.log(galleryData[0].search_uri);
+            // $("<img>").attr("src", galleryData[0]).appendTo($("#bottom"));
         });
     });
 });
