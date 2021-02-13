@@ -132,6 +132,8 @@ $.ajax({
     // Card Image Gallery
     ///////////////////////
 
+    // IF I CAN'T GET THE GALLERY TO SHOW ON MY PAGE CONSIDER OPENING ANOTHER WINDOW TO THE ACTUAL SCRYFALL GALLERY
+
     // ${setGallery}
     $(".carousel-images").click((event) => {
         $.ajax({
