@@ -130,17 +130,16 @@ $.ajax({
 
     $(".carousel-images").click((event) => {
         $.ajax({
-            url: `https://api.scryfall.com/cards/search?order=set&q=e%3A${orderedSetsCodes}&unique=prints`,
+            // Currently this url is giving me all the cards because I am pulling all of the set codes
+            url: `https://api.scryfall.com/cards/search?order=set&q=e%3A${orderedSetsCodes[currentImageIndex]}&unique=prints`,
             dataType: "json",
         }).then((data) => {
             console.log(data);
-            console.log(data.data);
-            console.log(data.data[0]);
+            // console.log(data.data);
+            // console.log(data.data[0]);
 
-            // for (let i = 0; i < data.data.length; i++) {
-
-            // }
-            $("#bottom").prepend(`<img src=${data.data[0].image_uris.border_crop}/>`);
+            // THIS WORKS DO NOT DELETE, NEEDS EDITING
+            // $("#bottom").prepend(`<img src=${data.data[0].image_uris.border_crop}/>`);
         });
     });
 });
