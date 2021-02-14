@@ -381,6 +381,7 @@ body {
         padding: 20px;
         border: 10px solid goldenrod;
         background-color: white;
+        cursor: pointer;
     }
 
     /*Hidden Set Icons*/
