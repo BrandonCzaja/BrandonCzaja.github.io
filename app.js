@@ -91,8 +91,8 @@ $.ajax({
         $(".carousel-images").click((event) => {
             $(".gallery").append($("<img/>").attr("src", `https://scryfall.com/sets/${orderedSetsCodes[currentImageIndex]}`));
         });
-        console.log(orderedSetsCodes[currentImageIndex]);
-        console.log(currentImageIndex);
+        // console.log(orderedSetsCodes[currentImageIndex]);
+        // console.log(currentImageIndex);
 
         $(".carousel-images").children().eq(currentImageIndex).css("display", "block");
         $(".set-search").text(orderedSetsNames[currentImageIndex]);
@@ -115,11 +115,11 @@ $.ajax({
         $(".carousel-images").click((event) => {
             $(".gallery").append($("<img/>").attr("src", `https://scryfall.com/sets/${orderedSetsCodes[currentImageIndex]}`));
         });
-        console.log(orderedSetsCodes[currentImageIndex]);
-        console.log(currentImageIndex);
+        // console.log(orderedSetsCodes[currentImageIndex]);
+        // console.log(currentImageIndex);
 
         $(".carousel-images").children().eq(currentImageIndex).css("display", "block");
-        $(".set-search").text(orderedSets[currentImageIndex]);
+        $(".set-search").text(orderedSetsNames[currentImageIndex]);
     });
 
     // I WONDER IF I COULD SET THE SET CODE TO THE CURRENT IMAGE INDEX HERE
