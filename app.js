@@ -58,18 +58,14 @@ $.ajax({
     let highestIndex = data.data.length - 1;
     let currentImageIndex = 0;
 
-    // Gives me all the setCodes so I can use them for gallery images
-    let setCodes = [];
-    for (let i = highestIndex; i >= 0; i--) {
-        setCodes.push(data.data[i].code);
-    }
-
     // Puts the sets in the proper order. The API has them reversed
-    const orderedSets = [];
+    const orderedSetsNames = [];
+    const orderedSetsCodes = [];
 
     //This makes the carousel
     for (let i = highestIndex; i >= 0; i--) {
-        orderedSets.push(data.data[i].name);
+        orderedSetsNames.push(data.data[i].name);
+        orderedSetsCodes.push(data.data[i].code);
         // Set Symbol
         $("<img class = SetSymbols>")
             .attr({ src: data.data[i].icon_svg_uri, class: `${i}` })
@@ -93,13 +89,13 @@ $.ajax({
         }
 
         $(".carousel-images").click((event) => {
-            $(".gallery").append($("<img/>").attr("src", `https://scryfall.com/sets/${setCodes[currentImageIndex]}`));
+            $(".gallery").append($("<img/>").attr("src", `https://scryfall.com/sets/${orderedSetsCodes[currentImageIndex]}`));
         });
-        console.log(setCodes[currentImageIndex]);
+        console.log(orderedSetsCodes[currentImageIndex]);
         console.log(currentImageIndex);
 
         $(".carousel-images").children().eq(currentImageIndex).css("display", "block");
-        $(".set-search").text(orderedSets[currentImageIndex]);
+        $(".set-search").text(orderedSetsNames[currentImageIndex]);
     });
 
     // I MIGHT STILL BE ABLE TO GET THIS TO WORK. IF I JUST SET THE GALLERY AND CLICK FUNCTION HERE IT MIGHT WORK
@@ -117,9 +113,9 @@ $.ajax({
         }
 
         $(".carousel-images").click((event) => {
-            $(".gallery").append($("<img/>").attr("src", `https://scryfall.com/sets/${setCodes[currentImageIndex]}`));
+            $(".gallery").append($("<img/>").attr("src", `https://scryfall.com/sets/${orderedSetsCodes[currentImageIndex]}`));
         });
-        console.log(setCodes[currentImageIndex]);
+        console.log(orderedSetsCodes[currentImageIndex]);
         console.log(currentImageIndex);
 
         $(".carousel-images").children().eq(currentImageIndex).css("display", "block");
@@ -132,21 +128,17 @@ $.ajax({
     // Card Image Gallery
     ///////////////////////
 
-    // IF I CAN'T GET THE GALLERY TO SHOW ON MY PAGE CONSIDER OPENING ANOTHER WINDOW TO THE ACTUAL SCRYFALL GALLERY
-
-    // ${setGallery}
     $(".carousel-images").click((event) => {
         $.ajax({
-            // url: `https://api.scryfall.com/sets/`,
-            url: `https://api.scryfall.com/cards/search?order=set&q=e%3Atsr&unique=prints`,
+            url: `https://api.scryfall.com/cards/search?order=set&q=e%3A${orderedSetsCodes}&unique=prints`,
             dataType: "json",
         }).then((data) => {
             console.log(data);
             console.log(data.data);
             console.log(data.data[0]);
-            // const galleryData = [];
+
             // for (let i = 0; i < data.data.length; i++) {
-            //     galleryData.push(data.data[i]);
+
             // }
             $("#bottom").prepend(`<img src=${data.data[0].image_uris.border_crop}/>`);
         });
