@@ -132,14 +132,16 @@ $.ajax({
         $.ajax({
             // Currently this url is giving me all the cards because I am pulling all of the set codes
             url: `https://api.scryfall.com/cards/search?order=set&q=e%3A${orderedSetsCodes[currentImageIndex]}&unique=prints`,
-            dataType: "json",
         }).then((data) => {
-            console.log(data);
-            // console.log(data.data);
-            // console.log(data.data[0]);
+            // console.log(data);
+            console.log(data.data);
+            // Gives me the amount of cards in the set
+            console.log(data.data.length);
 
             // THIS WORKS DO NOT DELETE, NEEDS EDITING
-            // $("#bottom").prepend(`<img src=${data.data[0].image_uris.border_crop}/>`);
+            for (let i = 0; i < data.data.length; i++) {
+                $("#bottom").prepend(`<img src=${data.data[i].image_uris.border_crop}/>`);
+            }
         });
     });
 });
