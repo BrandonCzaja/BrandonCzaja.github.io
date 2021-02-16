@@ -98,8 +98,6 @@ $.ajax({
         $(".set-search").text(orderedSetsNames[currentImageIndex]);
     });
 
-    // I MIGHT STILL BE ABLE TO GET THIS TO WORK. IF I JUST SET THE GALLERY AND CLICK FUNCTION HERE IT MIGHT WORK
-
     /////////////////////
     // Previous Buttons
     /////////////////////
@@ -122,11 +120,11 @@ $.ajax({
         $(".set-search").text(orderedSetsNames[currentImageIndex]);
     });
 
-    // I WONDER IF I COULD SET THE SET CODE TO THE CURRENT IMAGE INDEX HERE
-
     ////////////////////////
     // Card Image Gallery
     ///////////////////////
+
+    // I need to reset the gallery with each click. JS has a reset method, but that is for forms. I don't know if jQuery has a reset method
 
     $(".carousel-images").click((event) => {
         $.ajax({
