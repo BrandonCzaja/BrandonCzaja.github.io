@@ -140,6 +140,9 @@ $.ajax({
             for (let i = 0; i < data.data.length; i++) {
                 $("#bottom").prepend(`<img src=${data.data[i].image_uris.border_crop}/>`);
             }
+            // for (let i = 0; i < data.data.length; i++) {
+            //     $("#bottom").prepend(`<img src=${data.data[i].image_uris.border_crop}/>`);
+            // }
         });
     });
 });

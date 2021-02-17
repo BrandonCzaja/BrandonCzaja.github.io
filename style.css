@@ -4,12 +4,6 @@ body {
     text-shadow: -2px 2px 0px rgb(192, 22, 34), 2px 2px 0px rgb(192, 22, 34), 2px -2px 0px rgb(192, 22, 34), -2px -2px 0px rgb(192, 22, 34);
 }
 
-/* 
-
-IF I GIVE THE DIV "BOTTOM" A HEIGHT OF 50% I MAY BE ABLE TO HAVE THE GALLERY SHOW UP IN AN ORDERLY FASHION
-
-*/
-
 /* MOBILE*/
 
 @media screen and (max-width: 767px) {
@@ -284,7 +278,6 @@ IF I GIVE THE DIV "BOTTOM" A HEIGHT OF 50% I MAY BE ABLE TO HAVE THE GALLERY SHO
         width: 100%;
     }
 
-    /*WILL BECOME A BUTTON WHEN I IMPLEMENT THE CARD GALLERY*/
     .carousel-images img:first-of-type {
         display: block;
     }
@@ -319,12 +312,23 @@ IF I GIVE THE DIV "BOTTOM" A HEIGHT OF 50% I MAY BE ABLE TO HAVE THE GALLERY SHO
     #left {
         width: 50%;
         float: left;
+        margin-bottom: 5%;
     }
 
     #right {
         width: 50%;
         float: right;
         margin-top: -1%;
+        margin-bottom: 20%;
+    }
+
+    #bottom {
+        display: inline-block;
+        text-align: center;
+    }
+
+    #bottom img {
+        display: inline;
     }
 
     #card-search {
@@ -376,6 +380,7 @@ IF I GIVE THE DIV "BOTTOM" A HEIGHT OF 50% I MAY BE ABLE TO HAVE THE GALLERY SHO
     .carousel-container {
         display: flex;
         justify-content: center;
+        height: 50%;
     }
 
     /*Image Container*/
