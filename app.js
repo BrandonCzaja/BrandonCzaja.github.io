@@ -4,13 +4,16 @@ $("form").on("submit", (event) => {
     const card = $("input").val();
     $.ajax({
         url: `https://api.magicthegathering.io/v1/cards?name=${card}`,
-        error:             error: function (request, status, error) {
-
-            $("#bottom").append("<p>This set does not have a Card Image Gallery yet. Please try another set.</p>");
-            $("#bottom").css("font-size", "xx-large", "text-align", "center");
+        error: function (request, status, error) {
+            $("#card-container").append("<p>Card name not found, please try another card.</p>");
+            $("#card-container").css("font-size", "xx-large", "text-align", "center");
         },
     }).then((data) => {
         // I NEED A CASE FOR IF THE CARD DOESN'T EXIST
+
+        // Card Name
+        $("#card-name").text("Name");
+        $("#name").html(data.cards[0].name);
 
         //Card Image
         $("#card-image").html(`<img src = "${data.cards[0].imageUrl}">`);
