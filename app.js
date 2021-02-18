@@ -129,6 +129,7 @@ $.ajax({
     // I need to reset the gallery with each click. JS has a reset method, but that is for forms. I don't know if jQuery has a reset method
 
     $(".carousel-images").click((event) => {
+        $("#bottom").empty();
         $.ajax({
             // Currently this url is giving me all the cards because I am pulling all of the set codes
             url: `https://api.scryfall.com/cards/search?order=set&q=e%3A${orderedSetsCodes[currentImageIndex]}&unique=prints`,
