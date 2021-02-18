@@ -80,6 +80,7 @@ $.ajax({
     // Next Button
     ////////////////
     $(".next").on("click", () => {
+        $("#bottom").empty();
         $(".carousel-images").children().eq(currentImageIndex).css("display", "none");
 
         if (currentImageIndex < highestIndex) {
@@ -102,6 +103,7 @@ $.ajax({
     // Previous Buttons
     /////////////////////
     $(".previous").on("click", () => {
+        $("#bottom").empty();
         $(".carousel-images").children().eq(currentImageIndex).css("display", "none");
 
         if (currentImageIndex > 0) {
