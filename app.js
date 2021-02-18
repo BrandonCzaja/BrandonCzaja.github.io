@@ -4,6 +4,11 @@ $("form").on("submit", (event) => {
     const card = $("input").val();
     $.ajax({
         url: `https://api.magicthegathering.io/v1/cards?name=${card}`,
+        error:             error: function (request, status, error) {
+
+            $("#bottom").append("<p>This set does not have a Card Image Gallery yet. Please try another set.</p>");
+            $("#bottom").css("font-size", "xx-large", "text-align", "center");
+        },
     }).then((data) => {
         // I NEED A CASE FOR IF THE CARD DOESN'T EXIST
 
@@ -134,7 +139,6 @@ $.ajax({
             // Currently this url is giving me all the cards because I am pulling all of the set codes
             url: `https://api.scryfall.com/cards/search?order=set&q=e%3A${orderedSetsCodes[currentImageIndex]}&unique=prints`,
             error: function (request, status, error) {
-                // alert("This set does not have a Card Image Gallery yet. Please try another set.");
                 $("#bottom").append("<p>This set does not have a Card Image Gallery yet. Please try another set.</p>");
                 $("#bottom").css("font-size", "xx-large", "text-align", "center");
             },
